@@ -1,0 +1,73 @@
+#!/bin/sh
+VSCODE="${VSCODE:-vscode}"
+XDG_DATA_HOME="${XDG_DATA_HOME:-$HOME/.local/share}"
+XDG_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}"
+VSIX_DEFAULT_FILE="${XDG_DATA_HOME}/vsixget/extensions"
+
+usage() {
+    cat - <<!
+USAGE: vsixget [PUBLISHER.EXTENSION@VERSION]
+
+OPTIONS:
+    -h          display this help
+    -w          download only
+    -c FILE     download extensions from FILE (default: $VSIX_DEFAULT_FILE)
+!
+}
+
+vsixget() {
+    curlflags="-Ss"
+    pubname="$(echo $1 | cut -d@ -f1)"
+    version=$(echo $1 | cut -d@ -f2)
+    publisher=$(echo $pubname | cut -d. -f1)
+    name=$(echo $pubname | cut -d. -f2)
+    extname="$publisher.$name-$version.vsix"
+    url="https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+
+    if [ -n "$download_only" ]; then
+        curlflags=""
+    fi
+
+    curl $curlflags -o "$XDG_DOWNLOAD_DIR/$extname" $url
+    if [ -z "$download_only" ]; then
+        $VSCODE --install-extension "$XDG_DOWNLOAD_DIR/$extname"
+        rm "$XDG_DOWNLOAD_DIR/$extname"
+    fi
+}
+
+getall() {
+    file="$1"
+    while read line; do
+        vline="${line%%#*}"
+        [ -n "$vline" ] && vsixget "$vline"
+    done < $file
+}
+
+download_only=""
+config_file=""
+
+while getopts ":hwc:" opt; do
+    case $opt in
+        h)
+            usage
+            exit 0
+            ;;
+        c)
+            config_file="$OPTARG"
+            ;;
+        w)
+            download_only="true"
+            ;;
+        *)
+            usage >&2
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+if [ -n "$1" ]; then
+    vsixget "$1"
+else
+    getall "${config_file:-$VSIX_DEFAULT_FILE}"
+fi

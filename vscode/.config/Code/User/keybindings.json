@@ -1,0 +1,77 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "alt+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "listFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "listFocus"
+    },
+    {
+        "key": "l",
+        "command": "list.expand",
+        "when": "listFocus"
+    },
+    {
+        "key": "h",
+        "command": "list.collapse",
+        "when": "listFocus"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "selectNextSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "selectPrevSuggestion",
+        "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.quickOpenNavigateNext",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.quickOpenNavigatePrevious",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "down",
+        "command": "-extension.vim_down",
+        "when": "editorTextFocus && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "down",
+        "command": "-extension.vim_down",
+        "when": "editorTextFocus && !inDebugRepl && !suggestWidgetMultipleSuggestions && !suggestWidgetVisible"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.tasks.test"
+    },
+    {
+        "key": "alt+z",
+        "command": "workbench.action.toggleMaximizedPanel"
+    }
+]

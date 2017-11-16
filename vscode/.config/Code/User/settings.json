@@ -1,0 +1,139 @@
+{
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": true,
+    "editor.rulers": [
+        80
+    ],
+    "editor.roundedSelection": false,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.renderControlCharacters": true,
+    "editor.showFoldingControls": "always",
+    "debug.inlineValues": true,
+    "files.hotExit": "off",
+    "markdown.styles": [
+        "https://raw.githubusercontent.com/sindresorhus/github-markdown-css/gh-pages/github-markdown.css"
+    ],
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/obj": true
+    },
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.easymotion": true,
+    "vim.useCtrlKeys": false,
+    "vim.foldfix": true,
+    "vim.enableNeovim": true,
+    "vim.disableAnnoyingNeovimMessage": true,
+    "vim.hlsearch": true,
+    "vim.handleKeys": {
+        "<C-r>": true
+    },
+    "vim.otherModesKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "/"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": ":nohl",
+                    "args": []
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.nextEditorInGroup"
+                }
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "T"
+            ],
+            "after": [],
+            "commands": [
+                {
+                    "command": "workbench.action.previousEditorInGroup"
+                }
+            ]
+        }
+    ],
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.external.linuxExec": "termite",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "underline",
+    "terminal.integrated.commandsToSkipShell": [
+        "editor.action.toggleTabFocusMode",
+        "workbench.action.debug.continue",
+        "workbench.action.debug.pause",
+        "workbench.action.debug.restart",
+        "workbench.action.debug.run",
+        "workbench.action.debug.start",
+        "workbench.action.debug.stop",
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.focusFirstEditorGroup",
+        "workbench.action.focusSecondEditorGroup",
+        "workbench.action.focusThirdEditorGroup",
+        "workbench.action.openNextRecentlyUsedEditorInGroup",
+        "workbench.action.openPreviousRecentlyUsedEditorInGroup",
+        "workbench.action.quickOpen",
+        "workbench.action.showCommands",
+        "workbench.action.terminal.clear",
+        "workbench.action.terminal.copySelection",
+        "workbench.action.terminal.focus",
+        "workbench.action.terminal.focusAtIndex1",
+        "workbench.action.terminal.focusAtIndex2",
+        "workbench.action.terminal.focusAtIndex3",
+        "workbench.action.terminal.focusAtIndex4",
+        "workbench.action.terminal.focusAtIndex5",
+        "workbench.action.terminal.focusAtIndex6",
+        "workbench.action.terminal.focusAtIndex7",
+        "workbench.action.terminal.focusAtIndex8",
+        "workbench.action.terminal.focusAtIndex9",
+        "workbench.action.terminal.focusNext",
+        "workbench.action.terminal.focusPrevious",
+        "workbench.action.terminal.kill",
+        "workbench.action.terminal.new",
+        "workbench.action.terminal.paste",
+        "workbench.action.terminal.runActiveFile",
+        "workbench.action.terminal.runSelectedText",
+        "workbench.action.terminal.scrollDown",
+        "workbench.action.terminal.scrollDownPage",
+        "workbench.action.terminal.scrollToBottom",
+        "workbench.action.terminal.scrollToTop",
+        "workbench.action.terminal.scrollUp",
+        "workbench.action.terminal.scrollUpPage",
+        "workbench.action.terminal.toggleTerminal",
+        "workbench.action.navigateUp"
+    ],
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "rust.rustLangSrcPath": "~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src",
+    "rust.actionOnSave": "test",
+    "C_Cpp.clang_format_path": "/usr/bin/clang-format",
+    "python.promptToInstallJupyter": false,
+    "python.jediPath": "/usr/lib/python3.6/site-packages/",
+    "arduino.path": "/usr/share/arduino",
+    "workbench.colorTheme": "One Dark Pro",
+    "python.venvPath": "~/.virtualenvs",
+    "material-icon-theme.showUpdateMessage": false,
+    "workbench.startupEditor": "none"
+}
