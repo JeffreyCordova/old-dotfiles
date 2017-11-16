@@ -27,6 +27,7 @@ bspc config pointer_modifier mod4
 bspc rule -a '*' state=floating layer=normal
 
 bspc rule -a Dunst state=floating layer=above sticky=on
+bspc rule -a Termuake state=floating layer=above stick=on follow=on border=off
 
 bspc rule -a Firefox -o desktop=alpha
 
@@ -38,6 +39,13 @@ export QT_QPA_PLATFORMTHEME="qt5ct"
 #---[autostart]-----------------------------------------------------------------
 #PATH="$HOME/.local/bin:$PATH"
 #sxhkd &
+
+. "$HOME/.config/bspwm/daemons"
+bspwm_mntrd
+bspwm_walld
+bspwm_termuaked
+
+bspc config external_rules_command "$HOME/.config/bspwm/external-rules"
 
 #xsetroot -cursor_name left_ptr
 

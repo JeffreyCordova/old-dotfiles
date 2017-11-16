@@ -1,0 +1,74 @@
+#!/bin/sh
+XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u $USER)/}"
+walldf="${XDG_RUNTIME_DIR}/bspwm/walld.last"
+
+mkdir -p "$(dirname $walldf)"
+
+distribute_desktops() {
+    primary="$(bspc query -M -m primary)"
+    other="$(bspc query -M | grep -v $primary)"
+    count="$(bspc query -M | wc -l)"
+    case "$count" in
+        1)
+            bspc monitor $primary -d alpha beta gamma psi omega
+            ;;
+        2)
+            bspc monitor $primary -d alpha beta gamma
+            bspc monitor $other -d psi omega
+            ;;
+        3)
+            bspc monitor $primary -d alpha beta gamma
+            bspc monitor $(echo $other | head -n 1) -d psi
+            bspc monitor $(echo $other | head -n 2) -d omega
+            ;;
+    esac
+}
+
+count_windows() {
+    exclude="$*"
+    counter=0
+    for wid in $(bspc query -N -n .window -d); do
+        class="$(xprop -id "$wid" WM_CLASS | cut -d\" -f4)"
+        echo "$exclude" | grep -q "$class" && continue
+        counter="$((counter + 1))"
+    done
+    echo "$counter"
+}
+
+
+bspwm_mntrd() {
+    distribute_desktops
+    bspc subscribe monitor | while read evt data; do
+        case "$evt" in
+            monitor_add|monitor_remove|monitor_geometry|monitor_swap)
+                killall -q compton
+                distribute_desktops
+                feh --no-fehbg --bg-scale ~/.local/share/wallpaper.png
+                compton -b
+                ;;
+        esac
+    done &
+}
+
+bspwm_walld() {
+    bspc subscribe | while read -r _; do
+        count="$(count_windows Termuake)"
+        if [ "$count" -gt 0 ] && [ "$(cat "$walldf")" != "blur" ]; then
+            feh --no-fehbg --bg-scale "$HOME/.local/share/wallpaper-blur.png"
+            printf "blur" > "$walldf"
+        elif [ "$count" -eq 0 ] && [ "$(cat "$walldf")" != "normal" ]; then
+            feh --no-fehbg --bg-scale "$HOME/.local/share/wallpaper.png"
+            printf "normal" > "$walldf"
+        fi
+    done &
+}
+
+bspwm_termuaked() {
+    bspc subscribe node_focus | while read evt _ _ id; do
+        wclass=$(xprop -id "$id" WM_CLASS | cut -d\" -f4)
+        if [ "$wclass" != "Termuake" ]; then
+            wmctrl -r "Termuake" -b add,hidden
+            break;
+        fi
+    done &
+}

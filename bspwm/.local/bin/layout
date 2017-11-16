@@ -1,0 +1,24 @@
+#!/bin/sh
+layout="$1"
+
+case "$layout" in
+    hsplitu)
+        grid last 6 0 6 12
+        grid focused 0 0 6 12
+        ;;
+    hsplitd)
+        grid last 0 0 6 12
+        grid focused 6 0 6 12
+        ;;
+    vsplitl)
+        grid last 0 6 12 6
+        grid focused 0 0 12 6
+        ;;
+    vsplitr)
+        grid last 0 0 12 6
+        grid focused 0 6 12 6
+        ;;
+    *)
+        diehelp 1
+        ;;
+esac

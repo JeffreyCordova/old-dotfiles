@@ -7,13 +7,16 @@
 
 # Application Shortcuts
 super + Return
-    termite
+    termuake
 
 super + shift + Return
     termuxton
 
 super + space
     rofi-helper
+
+super + t
+    termite
 
 super + e
     pcmanfm

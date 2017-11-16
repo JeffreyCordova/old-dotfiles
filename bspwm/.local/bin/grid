@@ -1,0 +1,187 @@
+#!/usr/bin/env python
+# pylint: disable-msg=C0103
+"""
+Script that move windows according to a virtual grid
+"""
+import shlex
+import subprocess
+import json
+from sys import stderr
+from collections import namedtuple
+import click
+
+
+class GridError(Exception):
+    """General grid error"""
+    pass
+
+
+class InvalidGeometryError(GridError):
+    """Geometry invalid error"""
+    pass
+
+
+class CommandFailedError(GridError):
+    """Failed command execution"""
+
+    def __init__(self, msg, wrapped):
+        super().__init__(self, msg)
+        self.msg = msg
+        self.wrapped = wrapped
+
+    def __str__(self):
+        return self.msg + str(self.wrapped)
+
+
+# pylint: disable-msg=R0903
+class Geometry:
+    """Aggregation of width, height, x offset and y offset"""
+    @staticmethod
+    def from_dict(data):
+        """Create Geometry instance from dictionary"""
+        x = data.get("x", 0)
+        y = data.get("y", 0)
+        try:
+            return Geometry(data["width"], data["height"], x, y)
+        except KeyError as err:
+            key = err.args[0]
+            raise InvalidGeometryError(f"Dictionary doesn't have {key} key")
+
+    def __init__(self, width, height, x=0, y=0):
+        if width <= 0:
+            raise InvalidGeometryError("Width must be a positive integer")
+        if height <= 0:
+            raise InvalidGeometryError("Height must be a positive integer")
+        try:
+            self.width = int(width)
+            self.height = int(height)
+            self.x = int(x)
+            self.y = int(y)
+        except ValueError:
+            raise InvalidGeometryError("Parameters must be numbers")
+
+    def __str__(self):
+        return "%dx%d%+d%+d" % (self.width, self.height, self.x, self.y)
+
+
+BSPWM = namedtuple("BSPWM", ["workarea", "gap", "border"])
+
+CalcParams = namedtuple('CalcParams', ["rows", "cols", "cr", "cc", "sr", "sc"])
+
+
+def cell_dim(bspwm, cparams):
+    """Returns width and height of a single cell"""
+    w = (bspwm.workarea.width - bspwm.gap) / cparams.cols
+    h = (bspwm.workarea.height - bspwm.gap) / cparams.rows
+    return w, h
+
+
+def calc_abs(bspwm, cparams):
+    """Return dimension for absolute positioning"""
+    cw, ch = cell_dim(bspwm, cparams)
+    width = cw * cparams.sc - bspwm.gap - 2 * bspwm.border
+    height = ch * cparams.sr - bspwm.gap - 2 * bspwm.border
+    x = cw * cparams.cc + bspwm.workarea.x + bspwm.gap
+    y = ch * cparams.cr + bspwm.workarea.y + bspwm.gap
+    return Geometry(width, height, x, y)
+
+
+def calc_rel(bspwm, cparams, windim):
+    """Return dimension for relative positioning"""
+    cw, ch = cell_dim(bspwm, cparams)
+    newdim = Geometry(windim.width, windim.height, windim.x, windim.y)
+
+    if cparams.cr != 0:
+        newdim.y += int(cparams.cr * ch)
+    if cparams.cc != 0:
+        newdim.x += int(cparams.cc * cw)
+    if cparams.sr != 0:
+        newdim.height += int(cparams.sr * ch)
+    if cparams.sc != 0:
+        newdim.width += int(cparams.sc * cw)
+
+    return newdim
+
+
+def runsh(command):
+    """Run command, return its output"""
+    try:
+        return subprocess.check_output(shlex.split(command), encoding="UTF-8")
+    except Exception as err:
+        raise CommandFailedError(f"Command '{command}' failed: ", err)
+
+
+def get_bspwm_status():
+    """Query bspwm for informations"""
+    res = json.loads(runsh("bspc query -T -d"))
+    workarea = Geometry.from_dict(res["root"]["rectangle"])
+    gap = int(res["windowGap"])
+    border = int(res["borderWidth"])
+    workarea.x -= gap
+    workarea.y -= gap
+    workarea.width += gap
+    workarea.height += gap
+    return BSPWM(workarea, gap, border)
+
+
+def get_window_id(window):
+    """Get window id from bspwm selector"""
+    return runsh(f"bspc query -N -n {window}")
+
+
+def get_window_status(window):
+    """Get dimension of window"""
+    wid = get_window_id(window)
+    res = json.loads(runsh(f"bspc query -T -n {wid}"))
+    return Geometry.from_dict(res["client"]["floatingRectangle"])
+
+
+def bspwm_teleport(window, dim):
+    """Teleport window"""
+    wid = get_window_id(window)
+    w = int(dim.width)
+    h = int(dim.height)
+    x = int(dim.x)
+    y = int(dim.y)
+    runsh(f"wmctrl -ir {wid} -e 0,{x},{y},{w},{h}")
+
+
+@click.command()
+@click.option("--print", "print_flag", is_flag=True,
+              help="Print geometry instead of moving window")
+@click.option("--relative", "-r", is_flag=True,
+              help="Move or resize window relative to its current geometry")
+@click.option("--rows", type=int, default=12,
+              help="Number of rows in the grid")
+@click.option("--cols", type=int, default=12,
+              help="Number of columns in the grid")
+@click.argument("win", type=str)
+@click.argument("cellrow", type=int)
+@click.argument("cellcol", type=int)
+@click.argument("spanrow", type=int)
+@click.argument("spancol", type=int)
+# pylint: disable-msg=C0111,R0913
+def grid(print_flag, relative, rows, cols, win, cellrow, cellcol, spanrow, spancol):
+    try:
+        bspwm = get_bspwm_status()
+
+        if relative:
+            cp = CalcParams(rows, cols, cellrow, cellcol, spanrow, spancol)
+            wid = get_window_id(win)
+            window_dim = get_window_status(wid)
+            newdim = calc_rel(bspwm, cp, window_dim)
+        else:
+            cp = CalcParams(rows, cols, cellrow, cellcol,
+                            max(1, spanrow), max(1, spancol))
+            newdim = calc_abs(bspwm, cp)
+
+        if print_flag:
+            print(newdim, flush=True)
+        else:
+            bspwm_teleport(win, newdim)
+    except GridError as err:
+        print(err, file=stderr, flush=True)
+
+
+if __name__ == "__main__":
+    grid()  # pylint: disable-msg=E1120

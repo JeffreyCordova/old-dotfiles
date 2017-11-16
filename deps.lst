@@ -36,4 +36,6 @@ wmctrl
 dex
 neovim
 python-neovim
-
+python-click
+nodejs
+npm

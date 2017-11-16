@@ -1,0 +1,61 @@
+#!/bin/sh
+XDG_CONFIG_DIR="${XDG_CONFIG_DIR:-$HOME/.config}"
+XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/tmp}"
+
+name="$(basename $0)"
+class="$(echo ${name} | sed 's/\(.\)/\U\1/')"
+title="$class"
+
+show() {
+    w="$1"
+    h="$2"
+    x="$3"
+    y="$4"
+
+    wmctrl -r "$name" -e 0,$x,$y,$w,$h
+    wmctrl -r "$name" -b remove,hidden
+    wmctrl -R "$name"
+}
+
+hide() {
+    wmctrl -r "$name" -b add,hidden
+}
+
+get_geom() {
+    yoff=$(bspc config top_padding)
+    jqfmt='[.width, "x", .height, "+", .x, "+", .y + '$yoff']'
+
+    rect="$(bspc query -T -m | jq .rectangle)"
+    echo "$rect" | jq -r "$jqfmt"' | map(tostring) | join("")'
+}
+
+main() {
+    geom="$(get_geom)"
+
+    w="$(pgeom w "$geom")"
+    h="$(pgeom h "$geom")"
+    x="$(pgeom x "$geom")"
+    y="$(pgeom y "$geom")"
+    h=$((h * 75 / 100))
+
+    if wmctrl -l | grep -q "$class"; then
+        if xdotool search --onlyvisible --class "$class" > /dev/null; then
+            hide
+        else
+            show $w $h $x $y
+        fi
+    else
+        termite --class "$class" --name "$name" -t "$title"\
+                --config "$XDG_CONFIG_DIR/termite/termuake.conf"\
+                --geometry "${w}x${h}+${x}+${y}"\
+                -e "tmux attach" &
+        pid="$!"
+
+        sleep .5
+        wid=$(wmctrl -lp | awk -v pid=$pid '$0~pid {print $1}')
+        wmctrl -ir "$wid" -b add,skip_taskbar
+
+    fi
+}
+
+main

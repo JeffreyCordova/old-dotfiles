@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Termuake
+Comment=
+Exec=.local/bin/termuake
+Icon=utilities-terminal
+Terminal=false
+StartupNotify=true

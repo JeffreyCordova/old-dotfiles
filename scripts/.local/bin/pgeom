@@ -1,0 +1,59 @@
+#!/bin/sh
+print_help() {
+    cat - <<!
+USAGE:
+    $(basename "$0") -h
+    $(basename "$0") [whxy] GEOM
+ARGUMENTS:
+    GEOM    geometry to operate
+    w       widht
+    h       height
+    x       x offset
+    y       y offset
+!
+}
+
+parse() {
+    geom="$1"
+    fmt="$2"
+    res="$(echo "$geom" | sed 's/x\|+\|\(-\)/ \1/g')"
+    output=""
+    for i in $(seq 1 ${#fmt}); do
+        case "$(echo "$fmt" | cut -c "$i")" in
+            w)
+                output="$output $(echo "$res" | cut -d' ' -f1)"
+                ;;
+            h)
+                output="$output $(echo "$res" | cut -d' ' -f2)"
+                ;;
+            x)
+                output="$output $(echo "$res" | cut -d' ' -f3)"
+                ;;
+            y)
+                output="$output $(echo "$res" | cut -d' ' -f4)"
+                ;;
+        esac
+    done
+    echo "$output" | xargs
+}
+
+fmt=""
+while getopts ":whxy" opt; do
+    case $opt in
+        w|h|x|y)
+            fmt="${fmt}${opt}"
+            ;;
+        *)
+            print_help >&2
+            exit 1
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+fmt="$1"
+geom="$2"
+
+[ -z "$fmt" ] && print_help >&2 && exit 1
+[ -z "$geom" ] && print_help >&2 && exit 1
+
+parse "$geom" "$fmt"
