@@ -11,7 +11,7 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 #---[plugins]-------------------------------------------------------------------
 MINIMAL_OK_COLOR=4
 
-zplug "JeffreyCordova/minimal", use:minimal.zsh, from:github, as:theme
+zplug "subnixr/minimal", use:minimal.zsh, from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 if ! zplug check --verbose; then
