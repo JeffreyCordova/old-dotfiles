@@ -3,4 +3,20 @@ figlet
 stow
 zsh
 zplug
+dunst
+firefox
+bspwm
+sxhkd
+qt5ct
+xorg-xsetroot
+lxsession
+compton
+feh
+xorg-server
+xorg-xinit
+mesa
+termite
+tree
+paper-icon-theme
+otf-overpass
 
