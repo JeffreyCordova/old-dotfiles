@@ -27,4 +27,12 @@ arc-gtk-theme
 ttf-roboto
 ttf-roboto-mono
 xorg-xrandr
+xdg-utils
+python-xdg
+python-virtualenv
+python-virtualenvwrapper
+tmux
+wmctrl
+dex
+nvim
 

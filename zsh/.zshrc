@@ -11,6 +11,22 @@ source /usr/share/zsh/scripts/zplug/init.zsh
 #---[plugins]-------------------------------------------------------------------
 MINIMAL_OK_COLOR=4
 
+minimal_tmux_sessions() {
+    local c="$MINIMAL_OK_COLOR"
+    local fmt="\e[38;5;244m#{?session_attached,\e[0;3${c}m,} #S\e[0m"
+    tmux list-sessions -F "$fmt" 2> /dev/null
+}
+
+minimal_magic_output() {
+    local sessions="$(minimal_tmux_sessions)"
+    if [ "$(echo $sessions | wc -l)" -gt 1 ]; then
+        echo -n "[\e[38;5;244mtmux\e[0m -"
+	minimal_tmux_sessions | tr -d '\n'
+	echo "\e[0m]"
+    fi
+    minimal_magic_output_base
+}
+
 zplug "subnixr/minimal", use:minimal.zsh, from:github, as:theme
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
@@ -53,4 +69,19 @@ alias reflector="sudo reflector --verbose \
                                 -l 200 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
+
+#---[tmux environment refresh]--------------------------------------------------
+if [ -n "$TMUX" ]; then
+    function tmux_refresh_env() {
+        eval $(tmux show-environment -s)
+    }
+else
+    function tmux_refresh_env() {
+        true
+    }
+fi
+
+function preexec() {
+    tmux_refresh_env
+}
 

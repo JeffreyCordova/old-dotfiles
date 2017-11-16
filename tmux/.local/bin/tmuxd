@@ -1,0 +1,58 @@
+#!/bin/sh
+die() {
+    code="$1"
+    reason="$2"
+    printf "%s\n" "$reason" >&2
+    exit "$code"
+}
+
+layouting() {
+    target_session="$1"
+    target_dir="$2"
+    rcfile="$target_dir/.tmuxdrc"
+
+    if [ -e "$rcfile" ]; then
+        env TMUX_SESSION_NAME="$target_session" \
+            TMUX_SESSION_DIR="$target_dir" \
+            "$rcfile"
+    fi
+}
+
+tmuxd() {
+    target_dir="$(readlink -fm "${1:-.}")"
+    create_dir="$2"
+    mode="$3"
+
+    session_name="$(basename "$target_dir" | tr -d '.')"
+
+    [ -n "$create_dir" ] && mkdir -p "$target_dir"
+    [ -d "$target_dir" ] || die 1 "$target_dir doesn't exists"
+
+    tmux new -d -s"$session_name" -c"$target_dir"
+    case "$mode" in
+        switch)
+            tmux switch-client -t "$session_name"
+            ;;
+        attach)
+            tmux attach -t "$session_name"
+            ;;
+    esac
+    layouting "$session_name" "$target_dir"
+}
+
+while getopts "pna" opt; do
+    case $opt in
+        p)
+            create_dir="yes"
+            ;;
+        n)
+            mode="switch"
+            ;;
+        a)
+            mode="attach"
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+tmuxd "$1" "$create_dir" "$mode"

@@ -9,6 +9,9 @@
 super + Return
     termite
 
+super + shift + Return
+    termuxton
+
 super + space
     rofi-helper
 

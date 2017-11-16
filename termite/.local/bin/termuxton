@@ -1,0 +1,10 @@
+#!/bin/sh
+name="$(basename "$0")"
+class="$(echo "${name}" | sed 's/\(.\)/\U\1/')"
+title="$class"
+
+if wmctrl -l | grep -q "$title"; then
+    wmctrl -R "$name"
+else
+    termite --class "$class" --name "$name" -t "$title" -e "tmux attach $1"
+fi

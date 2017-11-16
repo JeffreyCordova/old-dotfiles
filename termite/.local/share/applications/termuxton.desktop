@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Termuxton
+Comment=
+Exec=.local/bin/termuxton
+Icon=utilities-terminal
+Terminal=false
+StartupNotify=true

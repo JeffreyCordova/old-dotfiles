@@ -1,0 +1,6 @@
+#!/bin/sh
+name="$(basename "$0")"
+class="$(echo "${name}" | sed 's/\(.\)/\U\1/')"
+title="$class"
+
+termite --class "$class" --name "$name" -t "$title" -e "tmux attach $1"
