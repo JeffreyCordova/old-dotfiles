@@ -64,6 +64,12 @@ alias ls="ls --color=auto"
 alias l="ls -lah"
 alias grep="grep --color=auto"
 
+#---[tmux]
+alias tmuxk="tmux kill-session -t"
+alias tmuxl="tmux list-session -F #S"
+alias tmuxn="tmuxd -n"
+alias tmuxa="tmuxd -a"
+
 alias reflector="sudo reflector --verbose \
                                 --protocol https \
                                 -l 200 \
