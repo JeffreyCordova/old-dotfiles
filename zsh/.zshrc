@@ -21,7 +21,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
-zplug load --verbose
+zplug load
 
 #---[case-insensitive completion]-----------------------------------------------
 zstyle ':completion:*' menu select=2
