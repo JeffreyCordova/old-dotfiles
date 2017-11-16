@@ -5,11 +5,6 @@
 # /___/____/_/ /_/_/   \___/  
 #                             
 
-
-#---[PATH]----------------------------------------------------------------------
-export PATH="${HOME}/.local/bin:${PATH}"
-export MANPATH="${HOME}/.local/share/man:$MANPATH"
-
 #---[zplug loading]-------------------------------------------------------------
 source /usr/share/zsh/scripts/zplug/init.zsh
 
