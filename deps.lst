@@ -40,3 +40,7 @@ python-click
 nodejs
 npm
 visual-studio-code
+imagemagick
+jq
+xorg-xprop
+python-gobject

@@ -7,7 +7,7 @@
 #           /_/                                   
 
 #---[config]--------------------------------------------------------------------
-bspc config top_padding 35
+#bspc config top_padding 35
 bspc config border_width 2
 bspc config window_gap 5
 
@@ -37,8 +37,8 @@ bspc rule -a Firefox -o desktop=alpha
 export QT_QPA_PLATFORMTHEME="qt5ct"
 
 #---[autostart]-----------------------------------------------------------------
-#PATH="$HOME/.local/bin:$PATH"
-#sxhkd &
+PATH="$HOME/.local/bin:$PATH"
+sxhkd &
 
 . "$HOME/.config/bspwm/daemons"
 bspwm_mntrd
@@ -47,11 +47,11 @@ bspwm_termuaked
 
 bspc config external_rules_command "$HOME/.config/bspwm/external-rules"
 
-#xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr
 
-#/usr/bin/lxpolkit &
-#compton -b
-#feh --no-fehbg --bg-fill "$HOME/.local/share/wallpaper.png"
+/usr/bin/lxpolkit &
+compton -b --backend xrender
+feh --no-fehbg --bg-fill "$HOME/.local/share/wallpaper.png"
 
-#dunst & 
+dunst & 
 

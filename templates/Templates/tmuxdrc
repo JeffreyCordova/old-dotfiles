@@ -1,0 +1,4 @@
+#!/bin/sh
+# TMUX_SESSION_NAME := current tmux session
+# TMUX_SESSION_DIR  := current tmux session directory
+tmux send-keys -t $TMUX_SESSION_NAME "echo You are in $TMUX_SESSION_DIR" Enter

@@ -1,0 +1,13 @@
+BasedOnStyle: LLVM
+
+AlignTrailingComments: true
+AllowShortIfStatementsOnASingleLine: true
+BreakBeforeBraces: Attach
+ColumnLimit: 80
+IndentCaseLabels: false
+IndentWidth: 4
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeParens: ControlStatements
+SpacesBeforeTrailingComments: 2
+TabWidth: 4
+UseTab: Never

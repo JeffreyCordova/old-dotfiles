@@ -32,14 +32,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-sxhkd &
+#sxhkd &
 exec bspwm
 
-xsetroot -cursor_name left_ptr
+#xsetroot -cursor_name left_ptr
 
-/usr/bin/lxpolkit &
-compton -b
+#/usr/bin/lxpolkit &
+#compton -b
 #feh --no-fehbg --bg-fill "$HOME/.local/share/wallpaper.png"
-dunst &
-dex -ae bspwm
+#dunst &
+#dex -ae bspwm
 
