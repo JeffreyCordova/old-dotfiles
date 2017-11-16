@@ -1,0 +1,16 @@
+[default]
+vim_mode = true
+box_width = 250
+box_height = 45
+colorize = true
+color_offset = 0
+show_icons = true
+show_desktop = true
+show_titles = true
+icon_size = 25
+font = Overpass 11
+screenshot = false
+screenshot_offset_x = 0
+screenshot_offset_y = 0
+at_pointer = false
+color_file = .config/xwinmosaic/colors
