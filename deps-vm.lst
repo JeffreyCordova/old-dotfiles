@@ -35,9 +35,11 @@ tree
 ttf-roboto
 ttf-roboto-mono
 vim
+virtualbox-guest-utils
 visual-studio-code
 wmctrl
 xdg-utils
+xf86-video-vesa
 xorg-server
 xorg-xinit
 xorg-xprop

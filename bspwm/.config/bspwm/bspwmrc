@@ -41,7 +41,7 @@ PATH="$HOME/.local/bin:$PATH"
 sxhkd &
 
 . "$HOME/.config/bspwm/daemons"
-bspwm_mntrd
+#bspwm_mntrd
 bspwm_walld
 bspwm_termuaked
 
