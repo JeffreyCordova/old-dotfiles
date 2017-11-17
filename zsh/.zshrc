@@ -76,7 +76,7 @@ alias reflector="sudo reflector --verbose \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 
-pkg-list="comm -23 <(pacaur -Qqt | sort) \
+alias pkg-list="comm -23 <(pacaur -Qqt | sort) \
                    <(pacaur -Sqg base base-devel | sort) \
                    > pkgs.lst"
 
