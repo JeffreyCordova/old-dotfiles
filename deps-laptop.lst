@@ -48,9 +48,3 @@ xorg-xsetroot
 xwinmosaic-git
 zplug
 zsh
-connman
-wpa_supplicant
-efibootmgr
-refind-efi
-intel-ucode
-xf86-video-nouveau
