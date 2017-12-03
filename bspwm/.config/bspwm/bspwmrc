@@ -43,7 +43,7 @@ PATH="$HOME/.local/bin:$PATH"
 sxhkd &
 
 . "$HOME/.config/bspwm/daemons"
-#bspwm_mntrd
+bspwm_mntrd
 bspwm_walld
 bspwm_termuaked
 
@@ -52,8 +52,9 @@ bspc config external_rules_command "$HOME/.config/bspwm/external-rules"
 xsetroot -cursor_name left_ptr
 
 /usr/bin/lxpolkit &
-compton -b --backend xrender
+compton -b
 feh --no-fehbg --bg-fill "$HOME/.local/share/wallpaper.png"
 
 dunst & 
+tmuxd &
 

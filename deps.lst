@@ -48,3 +48,6 @@ xorg-xsetroot
 xwinmosaic-git
 zplug
 zsh
+vtop
+python2-neovim
+xclip

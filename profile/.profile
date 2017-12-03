@@ -6,7 +6,7 @@
 # /_/                              
 
 #---[env]-----------------------------------------------------------------------
-export EDITOR="vim"
+export EDITOR="nvim"
 export PAGER="less"
 export GREP_COLOR="0;34"
 
