@@ -5,8 +5,10 @@ walldf="${XDG_RUNTIME_DIR}/bspwm/walld.last"
 mkdir -p "$(dirname $walldf)"
 
 distribute_desktops() {
-    primary="$(bspc query -M -m primary)"
-    other="$(bspc query -M | grep -v $primary)"
+    #primary="$(bspc query -M -m primary)"
+    primary="0x00400002"
+    #other="$(bspc query -M | grep -v $primary)"
+    other="0x00400004"
     count="$(bspc query -M | wc -l)"
     case "$count" in
         1)

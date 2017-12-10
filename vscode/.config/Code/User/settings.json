@@ -1,4 +1,5 @@
 {
+    "julia.executablePath": "/usr/bin/julia",
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.minimap.enabled": false,

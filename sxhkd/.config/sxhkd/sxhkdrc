@@ -42,7 +42,7 @@ super + a; {h,j,k,l}
 super + r: {h,j,k,l}
     grid -r -- focused {0 -1,1 0,-1 0,0 1} 0 0
 
-# rezie a window
+# resize a window
 super + r: shift + {h,j,k,l}
     grid -r -- focused 0 0 {0 -1,1 0,-1 0,0 1}
 

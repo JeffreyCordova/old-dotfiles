@@ -70,6 +70,8 @@ alias tmuxl="tmux list-session -F #S"
 alias tmuxn="tmuxd -n"
 alias tmuxa="tmuxd -a"
 
+alias shutdown="shutdown -h now"
+
 alias reflector="sudo reflector --verbose \
                                 --protocol https \
                                 -l 200 \
