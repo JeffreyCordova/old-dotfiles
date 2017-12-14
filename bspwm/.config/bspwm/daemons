@@ -9,21 +9,21 @@ distribute_desktops() {
     primary="0x00400002"
     #other="$(bspc query -M | grep -v $primary)"
     other="0x00400004"
-    count="$(bspc query -M | wc -l)"
-    case "$count" in
-        1)
-            bspc monitor $primary -d alpha beta gamma psi omega
-            ;;
-        2)
-            bspc monitor $primary -d alpha beta gamma
-            bspc monitor $other -d psi omega
-            ;;
-        3)
-            bspc monitor $primary -d alpha beta gamma
-            bspc monitor $(echo $other | head -n 1) -d psi
-            bspc monitor $(echo $other | head -n 2) -d omega
-            ;;
-    esac
+#    count="$(bspc query -M | wc -l)"
+#    case "$count" in
+#        1)
+#            bspc monitor $primary -d alpha beta gamma psi omega
+#            ;;
+#        2)
+            bspc monitor $primary -d α β γ
+            bspc monitor $other -d ψ ω
+#            ;;
+#        3)
+#            bspc monitor $primary -d alpha beta gamma
+#            bspc monitor $(echo $other | head -n 1) -d psi
+#            bspc monitor $(echo $other | head -n 2) -d omega
+#            ;;
+#    esac
 }
 
 count_windows() {

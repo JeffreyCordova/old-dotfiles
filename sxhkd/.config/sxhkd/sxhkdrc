@@ -76,7 +76,7 @@ super + {_,shift + } w
 
 # focus/send to the given desktop
 super + {_,shift + }{1-3,9,0}
-    bspc {desktop -f,node -d} {alpha,beta,gamma,psi,omega}
+    bspc {desktop -f,node -d} {α,β,γ,ψ,ω}
 
 # focus/send to last desktop
 super + {_,shift + } Tab
