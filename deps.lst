@@ -8,6 +8,7 @@ feh
 figlet
 firefox
 gnome-themes-standard
+gucharmap
 hexchat
 imagemagick
 ipython
@@ -39,6 +40,7 @@ rofi
 spotify
 stow
 sxhkd
+tcharmap-git
 termite
 texlive-most
 texstudio
