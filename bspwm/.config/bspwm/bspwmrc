@@ -7,7 +7,7 @@
 #           /_/                                   
 
 #---[config]--------------------------------------------------------------------
-#bspc config top_padding 35
+bspc config top_padding 35
 bspc config border_width 2
 bspc config window_gap 5
 
@@ -29,13 +29,6 @@ bspc rule -a '*' state=floating layer=normal
 bspc rule -a Dunst state=floating layer=above sticky=on
 bspc rule -a Termuake state=floating layer=above stick=on follow=on border=off
 
-<<<<<<< HEAD
-bspc rule -a Hexchat desktop=gamma
-
-bspc rule -a Firefox -o desktop=alpha state=tiled
-
-=======
->>>>>>> polybar
 #---[environment]---------------------------------------------------------------
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || \
 [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || \
