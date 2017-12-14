@@ -7,9 +7,9 @@ dunst
 feh
 figlet
 firefox
+gnome-themes-standard
 hexchat
 imagemagick
-intel-ucode
 ipython
 jq
 julia
@@ -34,7 +34,6 @@ python-virtualenvwrapper
 python-xdg
 qbittorrent
 qt5ct
-refind-efi
 reflector
 rofi
 spotify

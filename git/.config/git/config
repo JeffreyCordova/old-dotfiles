@@ -1,0 +1,25 @@
+[user]
+    name = Jeffrey Cordova
+    email = jeffcordova@protonmail.com
+[diff]
+    prompt = true
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = nvimdiff
+    prompt = true
+[mergetool "nvimdiff"]
+    cmd = "nvim -d \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"\
+                -c '$wincmd w' -c 'wincmd J'"
+[core]
+    needitor = vim
+[alias]
+    a = add
+    c = commit
+    cm = commit -m
+    s = status -s
+    dt = difftool
+    dtc = difftool --cached
+    fff = flow feature finish
+    ffs = flow feature start
