@@ -31,7 +31,7 @@ bspc rule -a Termuake state=floating layer=above stick=on follow=on border=off
 
 bspc rule -a Hexchat desktop=gamma
 
-bspc rule -a Firefox -o desktop=alpha
+bspc rule -a Firefox -o desktop=alpha state=tiled
 
 #---[environment]---------------------------------------------------------------
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || \
