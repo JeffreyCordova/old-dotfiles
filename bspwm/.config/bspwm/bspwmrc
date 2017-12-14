@@ -29,10 +29,6 @@ bspc rule -a '*' state=floating layer=normal
 bspc rule -a Dunst state=floating layer=above sticky=on
 bspc rule -a Termuake state=floating layer=above stick=on follow=on border=off
 
-bspc rule -a Hexchat desktop=gamma
-
-bspc rule -a Firefox -o desktop=alpha state=tiled
-
 #---[environment]---------------------------------------------------------------
 [ "$XDG_CURRENT_DESKTOP" = "KDE" ] || \
 [ "$XDG_CURRENT_DESKTOP" = "GNOME" ] || \
