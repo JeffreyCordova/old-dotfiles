@@ -8,7 +8,7 @@
 #export DISPLAY=:0
 
 #---[zplug loading]-------------------------------------------------------------
-source /usr/share/zsh/scripts/zplug/init.zsh
+source /usr/share/zplug/init.zsh
 
 #---[plugins]-------------------------------------------------------------------
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
@@ -58,13 +58,6 @@ alias grep="grep --color=auto"
 
 #---[PATH]
 alias path='printf "${PATH//:/\\n}\n"'
-
-#---[system]
-alias reflector="sudo reflector --verbose \
-                                --protocol https \
-                                --latest 200 \
-                                --sort rate \
-                                --save /etc/pacman.d/mirrorlist"
 
 #---[spaceship theme settings]--------------------------------------------------
 SPACESHIP_DIR_TRUNC=0
