@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+# set current user as the owner of all affected directories/subdirectories/files
+compaudit | xargs chown -R "$(whoami)"
+
+# remove write permissions for group/others for all affected files
+compaudit | xargs chmod go-w
