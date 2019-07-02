@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo cp sid/sources.list /etc/apt/sources.list
+
+sudo apt update
+sudo apt dist-upgrade
+
+sudo apt update
+sudo apt upgrade
+
+sudo apt autoremove
