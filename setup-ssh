@@ -1,0 +1,7 @@
+#!/bin/bash
+#generate key
+ssh-keygen -t rsa -b 4096 -C "jeffcordova@protonmail.com"
+
+#add key to agent
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
