@@ -7,8 +7,8 @@
 
 #export DISPLAY=:0
 
-#---[zplug loading]-------------------------------------------------------------
-source /usr/share/zplug/init.zsh
+#---[load zplug]-------------------------------------------------------------
+source /usr/share/zsh/scripts/zplug/init.zsh
 
 #---[plugins]-------------------------------------------------------------------
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
@@ -52,12 +52,19 @@ bindkey -M vicmd 'K' run-help
 export KEYTIMEOUT=1
 
 #---[aliases]-------------------------------------------------------------------
-alias ls="ls --color=auto"
-alias l="ls -lah"
+alias ls="ls_extended"
+alias l="ls -alh"
 alias grep="grep --color=auto"
 
 #---[PATH]
 alias path='printf "${PATH//:/\\n}\n"'
+
+#---[update mirrors]
+alias reflector="sudo reflector --verbose \
+                                --protocol https \
+                                --latest 200 \
+                                --sort rate \
+                                --save /etc/pacman.d/mirrorlist"
 
 #---[spaceship theme settings]--------------------------------------------------
 SPACESHIP_DIR_TRUNC=0
