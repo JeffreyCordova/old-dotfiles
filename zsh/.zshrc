@@ -32,8 +32,3 @@ source ~/dotfiles/zsh/.zsh/hotkeys.zsh
 
 #---[aliases]-------------------------------------------------------------------
 source ~/dotfiles/zsh/.zsh/aliases.zsh
-
-#---[spaceship theme settings]--------------------------------------------------
-SPACESHIP_DIR_TRUNC=0
-SPACESHIP_BATTERY_SHOW=false
-spaceship_vi_mode_enable

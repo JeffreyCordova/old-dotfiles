@@ -5,14 +5,14 @@
 #  / .___/_/\__,_/\__, /_/_/ /_/____/  
 # /_/            /____/                
 
-#---[source zplug]--------------------------------------------------------------
+#---[zplug]---------------------------------------------------------------------
 source /usr/share/zsh/scripts/zplug/init.zsh
 
-#---[plugins]-------------------------------------------------------------------
+#---[plugins]
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
-#---[check/install plugins]-----------------------------------------------------
+#---[check/install plugins]
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -20,5 +20,10 @@ if ! zplug check --verbose; then
     fi
 fi
 
-#---[load]----------------------------------------------------------------------
+#---[load]-
 zplug load
+
+#---[spaceship theme]-----------------------------------------------------------
+SPACESHIP_DIR_TRUNC=0
+SPACESHIP_BATTERY_SHOW=false
+spaceship_vi_mode_enable
