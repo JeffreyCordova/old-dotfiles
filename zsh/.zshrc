@@ -27,22 +27,8 @@ setopt HIST_IGNORE_SPACE
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
-#---[vi mode]-------------------------------------------------------------------
-bindkey -v
-
-bindkey '^P' up-history
-bindkey '^N' down-history
-
-bindkey '^?' backward-delete-char
-
-bindkey '^r' history-incremental-search-backward
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd 'j' history-beginning-search-forward
-bindkey -M vicmd 'k' history-beginning-search-backward
-
-bindkey -M vicmd 'K' run-help
-
-export KEYTIMEOUT=1
+#---[hotkeys]-------------------------------------------------------------------
+source ~/dotfiles/zsh/.zsh/hotkeys.zsh
 
 #---[aliases]-------------------------------------------------------------------
 source ~/dotfiles/zsh/.zsh/aliases.zsh
