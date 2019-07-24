@@ -5,23 +5,16 @@
 # /___/____/_/ /_/_/   \___/  
 #                             
 
-#export DISPLAY=:0
+#---[Windows X-server config]---------------------------------------------------
+export $(dbus-launch)
+export LIBGL_ALWAYS_INDIRECT=1
 
-#---[load zplug]-------------------------------------------------------------
-source /usr/share/zsh/scripts/zplug/init.zsh
+export WSL_VERSION=$(wsl.exe -l -v | grep -a '[*]' | sed 's/[^0-9]*//g')
+export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+export DISPLAY=$WSL_HOST:0
 
-#---[plugins]-------------------------------------------------------------------
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
-zplug "zdharma/fast-syntax-highlighting", defer:2
-
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
-
-zplug load
+#---[plugins]----------------------------------------------------------------
+source ~/dotfiles/zsh/.zsh/plugins.zsh
 
 #---[no history duplicates]-----------------------------------------------------
 setopt INC_APPEND_HISTORY
@@ -52,19 +45,7 @@ bindkey -M vicmd 'K' run-help
 export KEYTIMEOUT=1
 
 #---[aliases]-------------------------------------------------------------------
-alias ls="ls_extended"
-alias l="ls -alh"
-alias grep="grep --color=auto"
-
-#---[PATH]
-alias path='printf "${PATH//:/\\n}\n"'
-
-#---[update mirrors]
-alias reflector="sudo reflector --verbose \
-                                --protocol https \
-                                --latest 200 \
-                                --sort rate \
-                                --save /etc/pacman.d/mirrorlist"
+source ~/dotfiles/zsh/.zsh/aliases.zsh
 
 #---[spaceship theme settings]--------------------------------------------------
 SPACESHIP_DIR_TRUNC=0
