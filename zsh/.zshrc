@@ -5,6 +5,8 @@
 # /___/____/_/ /_/_/   \___/  
 #                             
 
+export DOTFILES="$HOME/dotfiles"
+
 #---[Windows X-server config]---------------------------------------------------
 export $(dbus-launch)
 export LIBGL_ALWAYS_INDIRECT=1
@@ -14,7 +16,7 @@ export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
 export DISPLAY=$WSL_HOST:0
 
 #---[plugins]----------------------------------------------------------------
-source ~/dotfiles/zsh/.zsh/plugins.zsh
+source $DOTFILES/zsh/.zsh/plugins.zsh
 
 #---[no history duplicates]-----------------------------------------------------
 setopt INC_APPEND_HISTORY
@@ -28,7 +30,7 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 #---[hotkeys]-------------------------------------------------------------------
-source ~/dotfiles/zsh/.zsh/hotkeys.zsh
+source $DOTFILES/zsh/.zsh/hotkeys.zsh
 
 #---[aliases]-------------------------------------------------------------------
-source ~/dotfiles/zsh/.zsh/aliases.zsh
+source $DOTFILES/zsh/.zsh/aliases.zsh
