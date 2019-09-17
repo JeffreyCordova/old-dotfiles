@@ -66,7 +66,8 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tmhedberg/SimpylFold'
 Plug 'pangloss/vim-javascript'
 Plug 'julialang/julia-vim'
-Plug 'mboughaba/i3config.vim'
+"Plug 'mboughaba/i3config.vim'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
