@@ -11,7 +11,7 @@ font = HurmitNerdFontMono 10
 scrollback_lines = 10000
 search_wrap = true
 icon_name = terminal
-geometry = 1440x900
+#geometry = 1440x900
 
 # "system", "on" or "off"
 cursor_blink = system
@@ -31,11 +31,12 @@ filter_unmatched_urls = true
 # emit escape sequences for extra modified keys
 #modify_other_keys = false
 
+
 [colors]
 #cursor = #dcdccc
 foreground = #d7d0c7
 foreground_bold = #d7d0c7
-background = #000000
+background = rgba(00, 00, 00, .8)
 
 color0 = #101010
 color8 = #404040

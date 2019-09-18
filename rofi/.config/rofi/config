@@ -1,0 +1,35 @@
+!rofi.fullscreen:                     true
+rofi.width:                          50
+rofi.lines:                          12
+rofi.padding:                        10
+rofi.font:                           Overpass 14
+rofi.monitor:                        -1
+! State:                             BG        FG      BGalt     HLBG      HLFg
+rofi.color-normal:                   #00000000,#aabbbc,#00000000,#c0000000,#dedede
+rofi.color-urgent:                   #00000000,#dedede,#00000000,#c0000000,#cc0000
+rofi.color-active:                   #00000000,#dedede,#00000000,#c0000000,#dedede
+!                                    BG        Border  Sep
+rofi.color-window:                   #a6000000,#000000,#dedede
+rofi.bw:                             0
+rofi.location:                       0
+rofi.fixed-num-lines:                true
+rofi.terminal:                       termite -e
+! "Use levenshtein sorting" Set from: Default
+rofi.levenshtein-sort:               true
+rofi.case-sensitive:                 false
+! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
+rofi.matching:                       fuzzy
+rofi.line-margin:                    0
+rofi.line-padding:                   5
+rofi.separator-style:                none
+rofi.hide-scrollbar:                 true
+rofi.fake-transparency:              false
+! "Scrolling method. (0: Page, 1: Centered)" Set from: Default
+rofi.scroll-method:                  1
+! hotkeys
+! remove conflicting shortcuts
+rofi.kb-accept-entry:                Return
+rofi.kb-remove-to-eol:
+rofi.kb-row-up:                      Up,Control+k
+rofi.kb-row-down:                    Down,Control+j
+rofi.show-icons:                     true
