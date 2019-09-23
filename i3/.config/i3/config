@@ -93,7 +93,9 @@ bindsym $mod+Return exec --no-startup-id termite
 bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id appsmenu
+
+bindsym $mod+p exec --no-startup-id powermenu
 
 # change focus
 bindsym $mod+$left focus left
@@ -215,5 +217,3 @@ bindsym $mod+r mode "resize"
 bar {
         status_command py3status -c ~/.config/i3status/config
 }
-
-#mouse_warping none

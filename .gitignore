@@ -1,4 +1,3 @@
 nvim/.config/nvim/autoload/*
 nvim/.config/nvim/plugged/*
 julia/.julia/logs/
-leftwm/.config/leftwm/themes/current
