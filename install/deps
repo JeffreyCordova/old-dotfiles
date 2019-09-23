@@ -3,12 +3,12 @@ capitaine-cursors
 chromium
 compton
 feh
-ffmpeg
 figlet
 freerdp-git
 fzf
 gtk3
 i3-gaps
+lib32-libvdpau
 lib32-nvidia-utils
 ls_extended
 lxappearance-gtk3
@@ -24,6 +24,7 @@ openssh
 otf-overpass
 pacman-contrib
 pacmixer
+pacutils
 papirus-icon-theme-git
 pcmanfm-gtk3
 pulseaudio-alsa

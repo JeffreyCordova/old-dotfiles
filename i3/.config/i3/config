@@ -33,6 +33,7 @@ exec --no-startup-id "feh --bg-fill \
                           ~/Pictures/wallpaper/stalker02/stalker02_03.jpg \
                           ~/Pictures/wallpaper/stalker02/stalker02_04.jpg"
 exec --no-startup-id "compton -b"
+exec --no-startup-id "/usr/bin/lxpolkit &"
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
