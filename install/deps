@@ -21,6 +21,7 @@ nvidia
 nvidia-settings
 nvidia-utils
 openssh
+otf-hermit
 otf-overpass
 pacman-contrib
 pacmixer
@@ -41,6 +42,7 @@ termite
 tree
 unzip
 x264
+xclip
 xdg-user-dirs-gtk
 xdg-utils
 xorg-server

@@ -1,3 +1,5 @@
+rofi.terminal:          termite
+
 rofi.kb-remove-to-eol:
 rofi.kb-accept-entry:   Return
 
