@@ -468,7 +468,7 @@ def launch_connection_editor():
     if conf.has_option("editor", "terminal"):
         terminal = conf.get("editor", "terminal")
     else:
-        terminal = "xterm"
+        terminal = "termite"
     if conf.has_option("editor", "gui_if_available"):
         gui_if_available = conf.get("editor", "gui_if_available")
     else:

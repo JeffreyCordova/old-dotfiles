@@ -5,36 +5,29 @@
 # This config file uses keycodes (bindsym) and was written for the QWERTY
 # layout.
 #
-# To get a config file with the same key positions, but for your current
-# layout, use the i3-config-wizard
-#
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Overpass Regular 10
+font pango:Overpass 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-exec --no-startup-id "feh --bg-fill \
-                          ~/.local/wallpaper/stalker01.jpg \
-                          ~/.local/wallpaper/stalker02.jpg \
-                          ~/.local/wallpaper/stalker03.jpg \
-                          ~/.local/wallpaper/stalker04.jpg"
-exec --no-startup-id "compton -b"
-exec --no-startup-id "/usr/bin/lxpolkit &"
-exec_always --no-startup-id $(killall -q polybar;for m in $(polybar --list-monitors | cut -d":" -f1); do MONITOR=$m polybar -r default & done)
+exec --no-startup-id feh --bg-fill \
+                         ~/.local/wallpaper/stalker01.jpg \
+                         ~/.local/wallpaper/stalker02.jpg \
+                         ~/.local/wallpaper/stalker03.jpg \
+                         ~/.local/wallpaper/stalker04.jpg
+exec --no-startup-id compton -b
+exec --no-startup-id /usr/bin/lxpolkit &
+exec_always --no-startup-id $(killall -q polybar; \
+                              for m in $(polybar --list-monitors | cut -d":" -f1); do \
+                                  MONITOR=$m polybar -r default & done)
 
 # Use pactl to adjust volume in PulseAudio.
 #set $refresh_i3status killall -SIGUSR1 i3status
@@ -65,16 +58,16 @@ gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 # workspaces
-set $ws1 I
-set $ws2 II
-set $ws3 III
-set $ws4 IV
-set $ws5 V
-set $ws6 VI
-set $ws7 VII
-set $ws8 VIII
-set $ws9 IX
-set $ws10 X
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws10 10
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -94,10 +87,12 @@ bindsym $mod+Return exec --no-startup-id termite
 # kill focused window
 bindsym $mod+q kill
 
-# start dmenu (a program launcher)
+# rofi-menus
 bindsym $mod+d exec --no-startup-id appsmenu
-
 bindsym $mod+p exec --no-startup-id powermenu
+bindsym $mod+n exec --no-startup-id networkmenu
+bindsym $mod+i exec --no-startup-id i3layoutmenu
+bindsym $mod+o exec --no-startup-id scrotmenu
 
 # change focus
 bindsym $mod+$left focus left
@@ -117,16 +112,8 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
+# split in horizontal/vertical orientation
 bindsym $mod+c split h
-
-# split in vertical orientation
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
@@ -213,9 +200,3 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command py3status -c ~/.config/i3status/config
-#}

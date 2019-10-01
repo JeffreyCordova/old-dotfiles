@@ -20,7 +20,7 @@ case $chosen in
         systemctl reboot
         ;;
     $lock)
-        light-locker-command -l
+        i3lock -u -t -i ~/.local/wallpaper/stalkerbio.jpg
         ;;
     $suspend)
         mpc -q pause
