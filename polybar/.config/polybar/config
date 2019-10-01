@@ -102,7 +102,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = arrow1 networkspeedup networkspeeddown arrow2 cpu2 memory2 arrow3 uptime arrow4 volume arrow5 updates-arch-aur arrow6 date arrow7
+modules-right = arrow1 networkspeedup networkspeeddown arrow2 cpu2 memory2 arrow3 uptime arrow4 volume arrow5 wired-network arrow6 date arrow7
 
 separator =
 
@@ -331,7 +331,7 @@ content-background = #56B6C2
 
 
 ################################################################################
-###############################################################################
+################################################################################
 ############                       MODULES A-Z                      ############
 ################################################################################
 ################################################################################
@@ -1162,37 +1162,17 @@ tail = true
 #################################################################################
 
 [module/wired-network]
-;https://github.com/jaagr/polybar/wiki/Module:-network
-type = internal/network
-interface = eno1
-interval = 3.0
+type = custom/script
+exec = nmcli --fields NAME connection show --active | tail -n +2 | sed 's/[[:space:]]*$//'
+interval = 3
+label = %output%
 
-; Available tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-; Default: %ifname% %local_ip%
-label-connected =  %ifname%
-label-disconnected = disconnected
-
-format-connected-foreground = #282C34
-format-connected-background = #E06C75
-format-connected-underline = #E06C75
-format-connected-prefix = "  "
-format-connected-prefix-foreground = #282C34
-format-connected-prefix-background = #E06C75
-
-format-disconnected = <label-disconnected>
-format-disconnected-underline = #E06C75
-format-disconnected-background = #E06C75
-format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = #282C34
-format-disconnected-prefix-background = #E06C75
-label-disconnected-foreground = #282C34
+format-foreground = #282C34
+format-background = #C678DD
+format-underline = #C678DD
+format-prefix = "  "
+format-prefix-foreground = #282C34
+format-prefix-background = #C678DD
 
 
 ################################################################################

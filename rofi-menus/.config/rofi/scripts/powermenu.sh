@@ -23,12 +23,12 @@ case $chosen in
         i3lock -u -t -i ~/.local/wallpaper/stalkerbio.jpg
         ;;
     $suspend)
-        mpc -q pause
+        #mpc -q pause
         amixer set Master mute
         systemctl suspend
         ;;
     $log_out)
-        i3-msg exit
+        pkill X
         ;;
 esac
 
