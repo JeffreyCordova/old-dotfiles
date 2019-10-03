@@ -19,3 +19,8 @@ alias reflector="sudo reflector --verbose \
                                 --latest 200 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
+
+#---[browse installed packages]-------------------------------------------------
+alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' \
+                                  --layout=reverse \
+                                  --bind 'enter:execute(pacman -Qil {} | less)'"
