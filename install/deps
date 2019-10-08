@@ -1,15 +1,21 @@
 alsa-utils
+atool
 capitaine-cursors
 chromium
 compton
 dmenu
 feh
 figlet
+firefox
 freerdp-git
 fzf
+gksu
+glances
 google-chrome
+google-drive-ocamlfuse
 gtk3
 gvfs
+hddtemp
 i3-gaps
 i3-scrot
 i3lock-color-git
@@ -26,6 +32,7 @@ nerd-fonts-complete
 networkmanager
 networkmanager-openvpn
 nm-connection-editor
+ntfs-3g-fuse
 nvidia
 nvidia-settings
 nvidia-utils
@@ -42,7 +49,11 @@ papirus-icon-theme-git
 pcmanfm-gtk3
 polybar
 pulseaudio-alsa
+python-matplotlib
+python-netifaces
 python-pynvim
+python-zeroconf
+ranger
 remmina
 rofi
 rust-up
@@ -53,6 +64,7 @@ steamcmd
 steam-fonts
 stow
 termite
+tmux
 tree
 ttf-droid
 ttf-hack
@@ -60,6 +72,7 @@ ttf-liberation
 ttf-roboto
 ttf-roboto-mono
 ttf-roboton-slab
+unrar
 unzip
 visual-studio-code-insiders
 x264
@@ -71,5 +84,6 @@ xorg-xinit
 xorg-xprop
 xorg-xrandr
 xorg-xsetroot
+zip
 zplug
 zsh
