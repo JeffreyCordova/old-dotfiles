@@ -1,0 +1,73 @@
+
+// To view the default settings, hold "alt" while clicking on the "Settings" button.
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+
+{
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+
+    "defaultProfile": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+
+    "profiles":
+    [
+        {
+            // WSL settings
+            "guid": "{a5a97cb8-8961-5535-816d-772efe0c6a3f}",
+            "hidden": false,
+            "name": "Arch",
+            "source": "Windows.Terminal.Wsl",
+            "colorScheme": "termite",
+            "fontFace": "Cascadia Code",
+            "fontSize": 10,
+            "startingDirectory": "//wsl$/Arch/home/jeff"
+        },
+        {
+            // Make changes here to the powershell.exe profile
+            "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+            "name": "Windows PowerShell",
+            "commandline": "powershell.exe",
+            "hidden": false
+        },
+        {
+            // Make changes here to the cmd.exe profile
+            "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+            "name": "cmd",
+            "commandline": "cmd.exe",
+            "hidden": false
+        },
+        {
+            "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+            "hidden": true,
+            "name": "Azure Cloud Shell",
+            "source": "Windows.Terminal.Azure"
+        }
+    ],
+
+    // Add custom color schemes to this array
+    "schemes": [
+        {
+            "name": "termite",
+            "foreground": "#d7d0c7",
+            "background": "#000000",
+            "black": "#101010",
+            "blue": "#7dc1cf",
+            "brightBlack": "#404040",
+            "brightBlue": "#4e9fb1",
+            "brightCyan": "#42717b",
+            "brightGreen": "#a0cf5d",
+            "brightPurple": "#8542ff",
+            "brightRed": "#d23d3d",
+            "brightWhite": "#ffffff",
+            "brightYellow": "#f39d21",
+            "cyan": "#6d878d",
+            "green": "#b8d68c",
+            "purple": "#9b64fb",
+            "red": "#e84f4f",
+            "white": "#c0c0c0",
+            "yellow": "#e1aa5d"
+        }
+    ],
+
+    // Add any keybinding overrides to this array.
+    // To unbind a default keybinding, set the command to "unbound"
+    "keybindings": []
+}
