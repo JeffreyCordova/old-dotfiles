@@ -23,6 +23,9 @@ fi
 #---[load]-
 zplug load
 
+# fix for git crash
+FAST_HIGHLIGHT[chroma-git]="chroma/-ogit.ch"
+
 #---[spaceship theme]-----------------------------------------------------------
 SPACESHIP_DIR_TRUNC=0
 SPACESHIP_BATTERY_SHOW=false
