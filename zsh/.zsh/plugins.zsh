@@ -9,7 +9,6 @@
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 #---[plugins]
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 zplug "zdharma/fast-syntax-highlighting", defer:2
 
 #---[check/install plugins]
@@ -25,8 +24,3 @@ zplug load
 
 # fix for git crash
 FAST_HIGHLIGHT[chroma-git]="chroma/-ogit.ch"
-
-#---[spaceship theme]-----------------------------------------------------------
-SPACESHIP_DIR_TRUNC=0
-SPACESHIP_BATTERY_SHOW=false
-spaceship_vi_mode_enable

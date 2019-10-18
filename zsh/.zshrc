@@ -36,3 +36,5 @@ source $DOTFILES/zsh/.zsh/hotkeys.zsh
 
 #---[aliases]-------------------------------------------------------------------
 source $DOTFILES/zsh/.zsh/aliases.zsh
+
+eval "$(starship init zsh)"
