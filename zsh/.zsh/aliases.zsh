@@ -16,7 +16,7 @@ alias path='printf "${PATH//:/\\n}\n"'
 #---[update mirrors]------------------------------------------------------------
 alias reflector="sudo reflector --verbose \
                                 --protocol https \
-                                --latest 50 \
+                                --latest 200 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 
