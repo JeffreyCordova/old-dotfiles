@@ -7,7 +7,7 @@
 
 export DOTFILES="$HOME/dotfiles"
 
-#---[Windows X-server config]---------------------------------------------------
+#---[WSL]-----------------------------------------------------------------------
 if [ -x "$(command -v wsl.exe)" ]; then
     export $(dbus-launch)
     export LIBGL_ALWAYS_INDIRECT=1
@@ -17,7 +17,7 @@ if [ -x "$(command -v wsl.exe)" ]; then
     export DISPLAY=$WSL_HOST:0
 fi
 
-#---[plugins]----------------------------------------------------------------
+#---[plugins]-------------------------------------------------------------------
 source $DOTFILES/zsh/.zsh/plugins.zsh
 
 #---[no history duplicates]-----------------------------------------------------
