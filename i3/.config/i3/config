@@ -23,7 +23,7 @@ exec --no-startup-id feh --bg-fill \
                          ~/.local/wallpaper/stalker02.jpg \
                          ~/.local/wallpaper/stalker03.jpg \
                          ~/.local/wallpaper/stalker04.jpg
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 exec --no-startup-id /usr/bin/lxpolkit &
 exec_always --no-startup-id $(killall -q polybar; \
                               for m in $(polybar --list-monitors | cut -d":" -f1); do \
