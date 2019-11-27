@@ -83,6 +83,7 @@ floating_modifier $mod
 
 assign [class="Steam"] $ws10
 assign [class="steam-runtime"] $ws10
+for_window [title="^Status Change Request .+$"] floating enable; move position center
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id termite
