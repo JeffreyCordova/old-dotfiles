@@ -81,6 +81,8 @@ set $mod Mod4
 # use Mouse+Mod1 to drag floating windows to their wanted position
 floating_modifier $mod
 
+for_window [class="flameshot"] floating enable
+for_window [title="^Subnautica.+$"] fullscreen enable
 assign [class="Steam"] $ws10
 assign [class="steam-runtime"] $ws10
 for_window [title="^Status Change Request.+$"] floating enable; move position center
@@ -96,7 +98,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec --no-startup-id appsmenu
 bindsym $mod+p exec --no-startup-id powermenu
 bindsym $mod+n exec --no-startup-id networkmenu
-bindsym $mod+m exec --no-startup-id nmvpnmenu
+#bindsym $mod+m exec --no-startup-id nmvpnmenu
 bindsym $mod+i exec --no-startup-id i3layoutmenu
 bindsym $mod+o exec --no-startup-id scrotmenu
 
