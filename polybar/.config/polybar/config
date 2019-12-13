@@ -581,7 +581,7 @@ format-online-background = ${colors.background}
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = eno1
+interface = ens33
 label-connected = "%upspeed:7% | "
 format-connected = <label-connected>
 format-connected-prefix = " "
@@ -595,7 +595,7 @@ format-connected-background = #E06C75
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
-interface = eno1
+interface = ens33
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = ""

@@ -34,6 +34,7 @@ fi
 
 exec i3
 
+vmware-user
 xsetroot -cursor_name left_ptr
 /usr/bin/lxpolkit &
 
