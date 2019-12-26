@@ -5,7 +5,6 @@ capitaine-cursors
 chromium
 chromium-widevine
 dmenu
-docker
 feh
 ffmpeg
 figlet
@@ -16,7 +15,6 @@ freerdp
 fzf
 gksu
 glances
-google-chrome
 google-drive-ocamlfuse
 graphviz
 gtk3
@@ -30,7 +28,7 @@ imagemagick
 jq
 lib32-libvdpau
 lib32-nvidia-utils
-ls_extended
+ls_extended-git
 lxappearance-gtk3
 lxsession
 mesa
@@ -73,7 +71,7 @@ python-zeroconf
 ranger
 remmina
 rofi
-rust-up
+rustup
 scrot
 spotify
 starship
@@ -97,8 +95,6 @@ unzip
 usbutils
 visual-studio-code-insiders
 vlc
-wireshark-cli
-wireshark-qt
 wmctrl
 x11-ssh-askpass
 x264
