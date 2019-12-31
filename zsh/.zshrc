@@ -6,6 +6,7 @@
 #                             
 
 export DOTFILES="$HOME/dotfiles"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 #---[WSL]-----------------------------------------------------------------------
 if [ -x "$(command -v wsl.exe)" ]; then

@@ -47,8 +47,8 @@ client.urgent           $FOCUS      $FOCUS      $FOCUS      $FOCUS
 client.background       $UNFOCUS
 
 # borders
-new_window pixel 4
-new_float pixel 4
+new_window pixel 3
+new_float pixel 3
 
 # gaps
 set $default_gaps_inner 12
