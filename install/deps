@@ -21,9 +21,9 @@ gtk3
 gvfs
 hddtemp
 i3-gaps
-i3-scrot
 i3lock-color-git
 i3lock-fancy-dualmonitors-git
+i3-scrot
 imagemagick
 jq
 lib32-libvdpau
@@ -36,6 +36,7 @@ mlocate
 neovim
 nerd-fonts-complete
 networkmanager
+network-manager-applet
 networkmanager-openvpn
 nm-connection-editor
 ntfs-3g-fuse

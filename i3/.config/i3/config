@@ -25,6 +25,7 @@ exec --no-startup-id feh --bg-fill \
                          ~/.local/wallpaper/stalker04.jpg
 exec --no-startup-id picom -b
 exec --no-startup-id /usr/bin/lxpolkit &
+exec --no-startup-id nm-applet &
 exec_always --no-startup-id $(killall -q polybar; \
                               for m in $(polybar --list-monitors | cut -d":" -f1); do \
                                   MONITOR=$m polybar -r default & done)
