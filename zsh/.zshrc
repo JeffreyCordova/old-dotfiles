@@ -5,8 +5,7 @@
 # /___/____/_/ /_/_/   \___/  
 #                             
 
-export DOTFILES="$HOME/dotfiles"
-export QT_QPA_PLATFORMTHEME=qt5ct
+#export QT_QPA_PLATFORMTHEME=qt5ct
 
 #---[WSL]-----------------------------------------------------------------------
 if [ -x "$(command -v wsl.exe)" ]; then
@@ -19,7 +18,7 @@ if [ -x "$(command -v wsl.exe)" ]; then
 fi
 
 #---[plugins]-------------------------------------------------------------------
-source $DOTFILES/zsh/.zsh/plugins.zsh
+source $HOME/.zsh/plugins.zsh
 
 #---[no history duplicates]-----------------------------------------------------
 setopt INC_APPEND_HISTORY
@@ -33,9 +32,9 @@ zstyle ':completion:*' menu select=2
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 #---[hotkeys]-------------------------------------------------------------------
-source $DOTFILES/zsh/.zsh/hotkeys.zsh
+source $HOME/.zsh/hotkeys.zsh
 
 #---[aliases]-------------------------------------------------------------------
-source $DOTFILES/zsh/.zsh/aliases.zsh
+source $HOME/.zsh/aliases.zsh
 
 eval "$(starship init zsh)"

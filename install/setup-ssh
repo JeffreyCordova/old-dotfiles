@@ -1,7 +1,10 @@
 #!/bin/bash
+
 #generate key
-ssh-keygen -o -a 100 -t ed25519 -f ~/.ssh/id_ed25519 -C "cordojd1@nv.ccsd.net"
+#ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519 -C "cordojd1@nv.ccsd.net"
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa -C "cordojd1@nv.ccsd.net"
 
 #add key to agent
 eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
+#ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_rsa
