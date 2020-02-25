@@ -9,7 +9,7 @@ locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 echo WS-2UA8261L5D > /etc/hostname
-#-----------------------
+#---[fix]---------------
 vim /etc/hosts
 #-----------------------
 
@@ -31,7 +31,7 @@ pacman -Syy
 bootctl --path=/boot install
 cp /usr/share/systemd/bootctl/loader.conf /boot/loader
 cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries
-#-----------------------
+#---[fix]---------------
 vim /boot/loader/loader.conf
 vim /boot/loader/entries/arch.conf
 #-----------------------

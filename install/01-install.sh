@@ -1,9 +1,9 @@
 #!/bin/bash
 
-parted -o /dev/sda mklabel gpt
-parted -o /dev/sda mkpart ESP fat32 0% 1GiB
-parted -o /dev/sda set 1 boot on
-parted -o /dev/sda mkpart primary ext4 1GiB 100%
+parted -a optimal /dev/sda mklabel gpt
+parted -a optimal /dev/sda mkpart ESP fat32 0% 1GiB
+parted -a optimal /dev/sda set 1 boot on
+parted -a optimal /dev/sda mkpart primary ext4 1GiB 100%
 
 mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
@@ -19,7 +19,10 @@ reflector \
     --latest 100 \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
-pacman -Syy
+
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+./strap.sh
 
 pacstrap /mnt \
     base{,-devel} linux{,-headers,-firmware} \
@@ -34,3 +37,8 @@ pacstrap /mnt \
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt 02-chroot.sh
+
+umount /mnt/boot
+umount /mnt
+
+reboot
