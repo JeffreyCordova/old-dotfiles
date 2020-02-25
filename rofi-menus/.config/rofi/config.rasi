@@ -7,5 +7,4 @@ configuration {
   modi:               "drun";
   display-drun:       "apps";
   columns:            2;
-  fake-transparency:  true;
 }

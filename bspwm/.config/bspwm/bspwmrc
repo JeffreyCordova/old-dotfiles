@@ -1,6 +1,8 @@
 #! /bin/sh
 
 sxhkd &
+compton -b
+xsetroot -cursor_name left_ptr
 
 bspc monitor DP-02 I II III
 bspc monitor DP-00 IV V VI
