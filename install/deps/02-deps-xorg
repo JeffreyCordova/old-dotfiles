@@ -1,0 +1,13 @@
+alsa-utils
+nvidia
+nvidia-settings
+nvidia-utils
+pacmixer
+pavucontrol
+pulseaudio-alsa
+xclip
+xorg-server
+xorg-xinit
+xorg-xprop
+xorg-xrandr
+xorg-xsetroot
