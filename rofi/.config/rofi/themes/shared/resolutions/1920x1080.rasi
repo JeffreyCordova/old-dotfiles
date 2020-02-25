@@ -1,6 +1,6 @@
 * {
   /* General */
-  text-font:                            "Overpass 16";
+  text-font:                            "Overpass 14";
   text-font-mono:                       "RobotoMono Nerd Font Regular 14";
   icon-font:                            "Hurmit Nerd Font Mono 60";
   icon-font-small:                      "Hurmit Nerd Font Mono 24";
@@ -8,10 +8,10 @@
   prompt-padding:                       16px 20px;
   entry-padding:                        18px 16px 16px 0px;
   /* list menus: appsmenu */
-  list-element-padding:                 20px;
+  list-element-padding:                 12px;
   list-element-margin:                  @inputbar-margin;
   list-element-border:                  0px 0px 0px 8px;
-  list-8-window-padding:                224px 360px;
+  list-8-window-padding:                248px 540px;
   /* appsmenu */
   apps-textbox-prompt-colon-padding:    16px;
 }
