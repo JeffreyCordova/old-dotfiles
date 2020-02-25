@@ -32,7 +32,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'thaerkh/vim-workspace'
 Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
 
 " commenting
 Plug 'scrooloose/nerdcommenter'

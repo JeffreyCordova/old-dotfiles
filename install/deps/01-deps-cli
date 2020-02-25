@@ -7,7 +7,6 @@ openssh
 pacman-contrib
 pacutils
 python-pynvim
-ranger
 starship
 tmux
 tree
