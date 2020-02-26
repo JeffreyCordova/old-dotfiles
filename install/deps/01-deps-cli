@@ -2,6 +2,7 @@ figlet
 fzf
 ls_extended
 mlocate
+ncdu
 neovim
 openssh
 pacman-contrib
