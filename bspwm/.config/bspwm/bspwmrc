@@ -4,8 +4,8 @@ sxhkd &
 xsetroot -cursor_name left_ptr
 picom -b
 feh --bg-fill \
-    $HOME/.local/wallpaper/witcher1.jpg \
     $HOME/.local/wallpaper/witcher2.jpg \
+    $HOME/.local/wallpaper/witcher1.jpg \
     $HOME/.local/wallpaper/witcher3.jpg
 
 bspc monitor DP-2 -d I II III
