@@ -23,6 +23,8 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 sxhkd &
 
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+
 picom -b
 
 feh --bg-fill \
