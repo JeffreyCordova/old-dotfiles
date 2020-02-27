@@ -70,18 +70,18 @@ pseudo-transparency = false
 [colors]
 background = ${colors.grey}
 foreground = #ABB2BF
-alert      = ${colors.red}
+alert = ${colors.red}
 volume-min = ${colors.green}
 volume-med = ${colors.yellow}
 volume-max = ${colors.red}
 
-grey   = #282C34
-red    = #E06C75
-green  = #98C379
+grey = #282C34
+red = #E06C75
+green = #98C379
 yellow = #E5C07B
-blue   = #61AFEF
+blue = #61AFEF
 purple = #C678DD
-cyan   = #56B6C2
+cyan = #56B6C2
 
 
 ;   --------------
@@ -329,16 +329,16 @@ fuzzy-match = true
 
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to correspond with the bspwm workspace name.
-ws-icon-0 = 1;1
-ws-icon-1 = 2;2
-ws-icon-2 = 3;3
-ws-icon-3 = 4;4
-ws-icon-4 = 5;5
-ws-icon-5 = 6;6
-ws-icon-6 = 7;7
-ws-icon-7 = 8;8
-ws-icon-8 = 9;9
-ws-icon-9 = 0;0
+ws-icon-0 = I;1
+ws-icon-1 = II;2
+ws-icon-2 = III;3
+ws-icon-3 = IV;4
+ws-icon-4 = V;5
+ws-icon-5 = VI;6
+ws-icon-6 = VII;7
+ws-icon-7 = VIII;8
+ws-icon-8 = IX;9
+ws-icon-9 = X;0
 
 ; Available tags:
 ;   <label-monitor>
