@@ -1,16 +1,16 @@
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;	  Themes : https://github.com/jaagr/dots/tree/master/.local/etc/themer/themes
-;   https://github.com/jaagr/polybar/wiki/
-;   https://github.com/jaagr/polybar/wiki/Configuration
-;   https://github.com/jaagr/polybar/wiki/Formatting
-;
-;=====================================================
+#                  __      __              
+#     ____  ____  / /_  __/ /_  ____ ______
+#    / __ \/ __ \/ / / / / __ \/ __ `/ ___/
+#   / /_/ / /_/ / / /_/ / /_/ / /_/ / /    
+#  / .___/\____/_/\__, /_.___/\__,_/_/     
+# /_/            /____/                    
 
+
+;   ------------------
+;---[GENERAL SETTINGS]----------------------------------------------------------
+;   ------------------
+
+;-----------------------------------------------------------
 [global/wm]
 ; Adjust the _NET_WM_STRUT_PARTIAL top value
 ;   Used for top aligned bars
@@ -20,6 +20,7 @@ margin-bottom = 0
 ;   Used for bottom aligned bars
 margin-top = 0
 
+;-----------------------------------------------------------
 [settings]
 ; The throttle settings lets the eventloop swallow up to X events if they
 ; happen within Y milliseconds after the first event was received.
@@ -61,16 +62,31 @@ format-offset =
 ; If set to true, the bar can be transparent without a compositor.
 pseudo-transparency = false
 
-[colors]
-; OneDark theme =========
-background = #282C34
-foreground = #ABB2BF
-alert = #E06C75
-volume-min = #98C379
-volume-med = #E5C07B
-volume-max = #E06C75
-; =======================
 
+;   ----------------
+;---[COLOR SETTINGS]------------------------------------------------------------
+;   ----------------
+
+[colors]
+background = ${colors.grey}
+foreground = #ABB2BF
+alert = ${colors.red}
+volume-min = ${colors.green}
+volume-med = ${colors.yellow}
+volume-max = ${colors.red}
+
+grey = #282C34
+red = #E06C75
+green = #98C379
+yellow = #E5C07B
+blue = #61AFEF
+purple = #C678DD
+cyan = #56B6C2
+
+
+;   --------------
+;---[BAR SETTINGS]--------------------------------------------------------------
+;   --------------
 
 [bar/default]
 
@@ -132,7 +148,7 @@ foreground = ${colors.foreground}
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
-background-0 =
+;background-0 =
 
 ; Value used for drawing rounded corners
 ; NOTE: This shouldn't be used together with border size because the border
@@ -147,7 +163,7 @@ radius = 0.0
 ;   {overline,underline}-size
 ;   {overline,underline}-color
 line-size = 2
-line-color = #282c34
+line-color = ${colors.grey}
 
 ; Values applied to all borders
 ; Individual side values can be defined using:
@@ -275,6 +291,10 @@ cursor-click =
 cursor-scroll =
 
 
+;   ----------------
+;---[BSPWM SETTINGS]------------------------------------------------------------
+;   ----------------
+
 [module/bspwm]
 type = internal/bspwm
 
@@ -361,16 +381,26 @@ label-focused-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-urgent = %icon %name%
+label-urgent = %icon% %name%
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.background}
 label-urgent-underline = ${colors.foreground}
 label-urgent-padding = 1
 
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon% %name%
 label-occupied = %icon% %name%
 label-occupied-underline = ${colors.foreground}
 label-occupied-padding = 1
 
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon% %name%
 label-empty = %icon% %name%
 label-empty-foreground = ${colors.foreground}
 label-empty-padding = 1
@@ -382,6 +412,7 @@ label-tiled = [T]
 label-fullscreen = [F]
 label-floating = [f]
 label-pseudotiled = [P]
+
 label-locked = [L]
 label-locked-foreground = ${colors.foreground}
 label-sticky = [S]
@@ -394,222 +425,77 @@ label-marked = [m]
 ;label-separator-foreground =
 ;label-separator-padding =
 
-;label-monitor = %name%
-
-;label-focused = %icon%
-;label-focused-background = ${colors.background}
-;label-focused-foreground = ${colors.foreground}
-;label-focused-padding = 2
-
-;label-occupied = %icon%
-;label-occupied-padding = 2
-
-;label-urgent = %icon%!
-;label-urgent-background = ${colors.background}
-;label-urgent-padding = 2
-
-;label-empty = %icon%
-;label-empty-background = ${colors.background}
-;label-empty-foreground = ${colors.foreground}
-;label-empty-padding = 2
-
 ;format-foreground = ${colors.foreground}
 ;format-background = ${colors.background}
 
 
-################################################################################
-################################################################################
-############                       MODULE I3                        ############
-################################################################################
-################################################################################
-
-[module/i3]
-;https://github.com/jaagr/polybar/wiki/Module:-i3
-type = internal/i3
-
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = true
-
-; This will split the workspace name on ':'
-; Default: false
-strip-wsnumbers = false
-
-; Sort the workspaces by index instead of the default
-; sorting that groups the workspaces by output
-; Default: false
-index-sort = false
-
-; Create click handler used to focus workspace
-; Default: true
-enable-click = true
-
-; Create scroll handlers used to cycle workspaces
-; Default: true
-enable-scroll = true
-
-; Wrap around when reaching the first/last workspace
-; Default: true
-wrapping-scroll = false
-
-; Set the scroll cycle direction
-; Default: true
-reverse-scroll = false
-
-; Use fuzzy (partial) matching on labels when assigning
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces
-; containing 'code' in the label
-; Default: false
-fuzzy-match = false
-
-;extra icons to choose from
-;http://fontawesome.io/cheatsheet/
-;       v           
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = " "
-
-; Available tags:
-;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
-;   <label-mode> (default)
-format = <label-state> <label-mode>
-
-label-mode = %mode%
-label-mode-padding = 2
-label-mode-foreground = #E06C75
-label-mode-background = #282C34
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-;   %output%
-; Default: %icon%  %name%
-; focused = Active workspace on focused monitor
-label-focused = %icon% %name%
-label-focused-background = ${colors.background}
-label-focused-foreground = ${colors.foreground}
-label-focused-underline = #E06C75
-label-focused-padding = 2
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon% %name%
-label-unfocused-padding = 2
-label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.foreground}
-label-unfocused-underline =
-
-; visible = Active workspace on unfocused monitor
-label-visible = %icon% %name%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = 2
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-; urgent = Workspace with urgency hint set
-label-urgent = %icon% %name%
-label-urgent-background = ${self.label-focused-background}
-label-urgent-foreground = #E06C75
-label-urgent-padding = 2
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-
-################################################################################
-###############################################################################
-############                       MODULES ARROWS                     ############
-################################################################################
-################################################################################
+;   ------------------
+;---[MODULES - ARROWS]----------------------------------------------------------
+;   ------------------
 
 [module/arrow1]
 ; grey to red
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #E06C75
-content-background = #282C34
+content-background = ${colors.grey}
+content-foreground = ${colors.red}
 
 [module/arrow2]
 ; red to green
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #98C379
-content-background = #E06C75
+content-background = ${colors.red}
+content-foreground = ${colors.green}
 
 [module/arrow3]
 ; green to yellow
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #E5C07B
-content-background = #98C379
+content-background = ${colors.green}
+content-foreground = ${colors.yellow}
 
 [module/arrow4]
 ; yellow to blue
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #61AFEF
-content-background = #E5C07B
+content-background = ${colors.yellow}
+content-foreground = ${colors.blue}
 
 [module/arrow5]
 ; blue to purple
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #C678DD
-content-background = #61AFEF
+content-background = ${colors.blue}
+content-foreground = ${colors.purple}
 
 [module/arrow6]
 ; purple to cyan
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #56B6C2
-content-background = #C678DD
+content-background = ${colors.purple}
+content-foreground = ${colors.cyan}
 
 [module/arrow7]
 ; cyan to grey
 type = custom/text
 content = "%{T2} %{T-}"
 content-font = 2
-content-foreground = #282C34
-content-background = #56B6C2
+content-foreground = ${colors.grey}
+content-background = ${colors.cyan}
 
 
-################################################################################
-################################################################################
-############                       MODULES A-Z                      ############
-################################################################################
-################################################################################
+;   ---------
+;---[MODULES]-------------------------------------------------------------------
+;   ---------
 
-################################################################################
 
+;-----------------------------------------------------------
 [module/backlight-acpi]
 inherit = module/xbacklight
 type = internal/backlight
@@ -621,8 +507,7 @@ format-prefix-underline = #7D49B6
 format-underline = #7D49B6
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/backlight]
 ;https://github.com/jaagr/polybar/wiki/Module:-backlight
 
@@ -658,8 +543,7 @@ bar-fill = ─
 bar-empty = ─
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/battery]
 ;https://github.com/jaagr/polybar/wiki/Module:-battery
 type = internal/battery
@@ -670,21 +554,21 @@ full-at = 100
 format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
 format-charging-prefix = " "
-label-charging-foreground = #282C34
+label-charging-foreground = ${colors.grey}
 format-charging-foreground = #282C34
-format-charging-background = #C678DD
+format-charging-background = ${colors.purple}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
 format-discharging-prefix = " "
 label-discharging-foreground = #282C34
 format-discharging-foreground = #282C34
-format-discharging-background = #C678DD
+format-discharging-background = ${colors.purple}
 
 format-full-prefix = "  "
 format-full-prefix-foreground = #282C34
 format-foreground = #282C34
-format-background = #C678DD
+format-background = ${colors.purple}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -702,8 +586,7 @@ animation-charging-foreground = #282C34
 animation-charging-framerate = 750
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/compton]
 ;https://github.com/jaagr/polybar/wiki/User-contributed-modules#compton
 type = custom/script
@@ -715,8 +598,7 @@ format-background = ${colors.background}
 ;format-underline = #00AF02
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/cpu1]
 ;https://github.com/jaagr/polybar/wiki/Module:-cpu
 type = internal/cpu
@@ -727,8 +609,8 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 ;   
 format-prefix = " "
-format-prefix-foreground = #56B6C2
-format-underline = #56B6C2
+format-prefix-foreground = ${colors.cyan}
+format-underline = ${colors.cyan}
 
 ; Available tags:
 ;   <label> (default)
@@ -771,8 +653,7 @@ ramp-coreload-7-font = 3
 ramp-coreload-7-foreground = #ff5555
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/cpu2]
 ;https://github.com/jaagr/polybar/wiki/Module:-cpu
 type = internal/cpu
@@ -780,7 +661,7 @@ type = internal/cpu
 ; Default: 1
 interval = 1
 format-foreground = #282C34
-format-background = #E5C07B
+format-background = ${colors.yellow}
 format-prefix = "  "
 format-prefix-foreground = #282C34
 
@@ -800,8 +681,7 @@ format = <label>
 label = CPU: %percentage:1%%
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/date]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
@@ -816,12 +696,11 @@ time-alt = %H:%M:%S
 format-prefix = "  "
 format-prefix-foreground = #282C34
 format-foreground = #282C34
-format-background = #56B6C2
+format-background = ${colors.cyan}
 label = %date% | %time%
 
 
-#################################################################
-
+;-----------------------------------------------------------
 [module/discord]
 type = custom/script
 exec = echo " Discord "
@@ -837,8 +716,7 @@ click-right = killall Discord && killall Discord
 format-prefix = ""
 
 
-#################################################################
-
+;-----------------------------------------------------------
 [module/ewmh]
 type = internal/xworkspaces
 
@@ -859,7 +737,7 @@ label-monitor = %name%
 label-active = %name%
 label-active-foreground = ${colors.foreground}
 label-active-background = ${colors.background}
-label-active-underline= #E06C75
+label-active-underline= ${colors.red}
 label-active-padding = 4
 
 label-occupied = %name%
@@ -879,8 +757,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/filesystem]
 ;https://github.com/jaagr/polybar/wiki/Module:-filesystem
 type = internal/fs
@@ -933,8 +810,7 @@ format-unmounted-background = ${colors.background}
 ;format-unmounted-underline = ${colors.alert}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/kernel]
 type = custom/script
 exec = uname -r
@@ -948,8 +824,7 @@ format-prefix-foreground = #0084FF
 format-underline = #0084FF
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/jgmenu]
 type = custom/script
 interval = 120
@@ -959,8 +834,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/load-average]
 type = custom/script
 exec = uptime | grep -ohe 'load average[s:][: ].*' | awk '{ print $3" "$4" "$5"," }' | sed 's/,//g'
@@ -977,8 +851,7 @@ format-prefix-foreground = #62FF00
 format-underline = #62FF00
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/memory1]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -1002,14 +875,13 @@ bar-used-empty-foreground = #ffffff
 
 format = <label> <bar-used>
 format-prefix = "  "
-format-prefix-foreground = #C678DD
-format-underline = #C678DD
+format-prefix-foreground = ${colors.purple}
+format-underline = ${colors.purple}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/memory2]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -1029,11 +901,10 @@ format = Mem: <label>
 format-prefix = "  "
 format-prefix-foreground = #282C34
 format-foreground = #282C34
-format-background = #98C379
+format-background = ${colors.green}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/memory3]
 ;https://github.com/jaagr/polybar/wiki/Module:-memory
 type = internal/memory
@@ -1051,14 +922,13 @@ label = %gb_used%/%gb_free%
 
 format = Mem <label>
 format-prefix = "  "
-format-prefix-foreground = #C678DD
-format-underline = #C678DD
+format-prefix-foreground = ${colors.purple}
+format-underline = ${colors.purple}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/mpd]
 ;https://github.com/jaagr/polybar/wiki/Module:-mpd
 type = internal/mpd
@@ -1083,8 +953,7 @@ format-online-foreground = ${colors.foreground}
 format-online-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
@@ -1094,11 +963,10 @@ format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = #282C34
 format-connected-foreground = #282C34
-format-connected-background = #E06C75
+format-connected-background = ${colors.red}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/networkspeeddown]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
@@ -1108,11 +976,10 @@ format-connected = <label-connected>
 format-connected-prefix = ""
 format-connected-prefix-foreground = #282C34
 format-connected-foreground = #282C34
-format-connected-background = #E06C75
+format-connected-background = ${colors.red}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/pacman-updates]
 type = custom/script
 ;exec = pacman -Qu | wc -l
@@ -1126,8 +993,7 @@ format-prefix-foreground = #FFBB00
 format-underline = #FFBB00
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/pavolume]
 type = custom/script
 tail = true
@@ -1137,13 +1003,12 @@ click-right = exec pavucontrol
 click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
 scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-format-underline = #E06C75
+format-underline = #{colors.red}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/pub-ip]
 ;https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
 type = custom/script
@@ -1157,8 +1022,7 @@ format-prefix = "  "
 format-prefix-foreground = #FFBB00
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/release]
 type = custom/script
 exec = (lsb_release -d | awk {'print $2'} ;echo " "; lsb_release -r | awk {'print $2'}) | tr -d '\n'
@@ -1171,8 +1035,7 @@ format-prefix-foreground = #62FF00
 format-underline = #62FF00
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/sep]
 ; alternative separator
 type = custom/text
@@ -1183,8 +1046,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/spotify1]
 ;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
 type = custom/script
@@ -1201,8 +1063,7 @@ format-prefix-foreground = #0f0
 label = %output:0:150%
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/temperature1]
 ;https://github.com/jaagr/polybar/wiki/Module:-temperature
 type = internal/temperature
@@ -1238,8 +1099,7 @@ ramp-4 = 
 ramp-foreground =${colors.foreground}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/temperature2]
 type = custom/script
 exec = ~/.config/polybar/scripts/tempcores.sh
@@ -1252,8 +1112,7 @@ format-prefix-foreground = #C1B93E
 label =  %output:0:150:%
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/uptime]
 ;https://github.com/jaagr/polybar/wiki/User-contributed-modules#uptime
 type = custom/script
@@ -1262,14 +1121,13 @@ interval = 100
 label = Uptime : %output%
 
 format-foreground = #282C34
-format-background = #E5C07B
+format-background = ${colors.yellow}
 format-prefix = "  "
 format-prefix-foreground = #282C34
-format-underline = #E5C07B
+format-underline = ${colors.yellow}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/variety]
 type = custom/script
 exec = echo " Variety"
@@ -1285,8 +1143,7 @@ click-right = variety --preferences
 click-left = variety --selector
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/volume]
 type = internal/pulseaudio
 ;type = internal/alsa
@@ -1320,8 +1177,8 @@ headphone-id = 9
 ; Default: false
 mapped = true
 
-format-muted-background = #61AFEF
-format-volume-background = #61AFEF
+format-muted-background = ${colors.blue}
+format-volume-background = ${colors.blue}
 format-volume = "<ramp-volume>  <label-volume>"
 format-volume-prefix = " "
 label-muted = "  muted"
@@ -1355,30 +1212,28 @@ ramp-volume-1 = 
 ;bar-volume-empty-font = 2
 ;bar-volume-empty-foreground = ${colors.foreground}
 ;format-volume-foreground = ${colors.foreground}
-;format-volume-background = #61AFEF
+;format-volume-background = ${colors.blue}
 ;format-muted-prefix = "  "
 ;format-muted-prefix-foreground = "#ff0000"
 ;format-muted-foreground = ${colors.foreground}
-;format-muted-background = #61AFEF
+;format-muted-background = ${colors.blue}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/weather]
 type = custom/script
 interval = 10
 format = <label>
 format-prefix = " "
-format-prefix-foreground = #98C379
-format-underline = #98C379
+format-prefix-foreground = ${colors.green}
+format-underline = ${colors.green}
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 exec = python -u ~/.config/polybar/scripts/weather.py
 tail = true
 
 
-#################################################################################
-
+;-----------------------------------------------------------
 [module/wired-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
@@ -1398,23 +1253,22 @@ label-connected =  %ifname%
 label-disconnected = disconnected
 
 format-connected-foreground = #282C34
-format-connected-background = #E06C75
-format-connected-underline = #E06C75
+format-connected-background = ${colors.red}
+format-connected-underline = ${colors.red}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = #282C34
-format-connected-prefix-background = #E06C75
+format-connected-prefix-background = ${colors.red}
 
 format-disconnected = <label-disconnected>
-format-disconnected-underline = #E06C75
-format-disconnected-background = #E06C75
+format-disconnected-underline = ${colors.red}
+format-disconnected-background = ${colors.red}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = #282C34
-format-disconnected-prefix-background = #E06C75
+format-disconnected-prefix-background = ${colors.red}
 label-disconnected-foreground = #282C34
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
@@ -1425,23 +1279,23 @@ label-connected = %essid%
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = #282C34
-format-connected-background = #E06C75
+format-connected-background = ${colors.red}
 format-connected-prefix = "  "
 format-connected-prefix-foreground = #282C34
-format-connected-prefix-background = #E06C75
-format-connected-underline = #E06C75
+format-connected-prefix-background = ${colors.red}
+format-connected-underline = ${colors.red}
 
 label-disconnected = disconnected
 label-disconnected-foreground = #282C34
-label-disconnected-background = #E06C75
+label-disconnected-background = ${colors.red}
 
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = #282C34
-format-disconnected-background = #E06C75
+format-disconnected-background = ${colors.red}
 format-disconnected-prefix = "  "
 format-disconnected-prefix-foreground = #282C34
-format-disconnected-prefix-background = #E06C75
-format-disconnected-underline = #E06C75
+format-disconnected-prefix-background = ${colors.red}
+format-disconnected-underline = ${colors.red}
 
 ramp-signal-0 = ▁
 ramp-signal-1 = ▂
@@ -1451,11 +1305,10 @@ ramp-signal-4 = ▅
 ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
-ramp-signal-foreground = ##98C379
+ramp-signal-foreground = ${colors.green}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
 type = internal/xbacklight
@@ -1480,8 +1333,7 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/xkeyboard]
 ;https://github.com/jaagr/polybar/wiki/Module:-xkeyboard
 type = internal/xkeyboard
@@ -1502,8 +1354,7 @@ label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground}
 
 
-################################################################################
-
+;-----------------------------------------------------------
 [module/xwindow]
 ;https://github.com/jaagr/polybar/wiki/Module:-xwindow
 type = internal/xwindow
@@ -1518,14 +1369,14 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 
-###############################################################################
+;-----------------------------------------------------------
 [module/vpn]
 type = custom/script
 exec = "echo 'vpn '"
 exec-if = pgrep -x openvpn
 interval = 5
-format-underline = #E06C75
-format-background = #E06C75
+format-underline = ${colors.red}
+format-background = ${colors.red}
 format-prefix = "  "
 format-prefix-foreground = #282C34
 
