@@ -5,6 +5,8 @@ nvidia-utils
 pacmixer
 pavucontrol
 pulseaudio-alsa
+upower
+xclip
 xclip
 xorg-server
 xorg-xinit
