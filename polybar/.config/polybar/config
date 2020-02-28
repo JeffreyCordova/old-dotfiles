@@ -196,7 +196,7 @@ module-margin = 0
 ; Font names are defined using <font-name>;<vertical-offset>
 ; Font names are specified using a fontconfig pattern.
 font-0 = "Hack Nerd Font:size=10;2"
-font-1 = "Hack Nerd Font:size=16;3"
+font-1 = "Hack Nerd Font:size=15;4"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
