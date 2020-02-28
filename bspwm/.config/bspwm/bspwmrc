@@ -21,6 +21,7 @@ bspc rule -a Pavucontrol state=floating
 
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+export SXHKD_SHELL=sh
 sxhkd &
 
 /usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &

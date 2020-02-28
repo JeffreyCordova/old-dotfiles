@@ -81,9 +81,9 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} \
-        {I,II,III,IV,V,VI,VII,VIII,IX,X}
+#super + {_,shift + }{1-9,0}
+#	bspc {desktop -f,node -d} \
+#        {I,II,III,IV,V,VI,VII,VIII,IX,X}
 
 #---[custom]--------------------------------------------------------------------
 
@@ -101,6 +101,20 @@ super + shift + {h,l}
     bspc desktop -s $(bspc query -D -d {prev,next}.active); \
     bspc monitor -o; \
     bspc monitor {prev,next} -o
+
+# if the given desktop:
+#   does not exist -> create on current monitor and focus
+#   is focused -> do nothing
+#   is hidden -> activate
+#   is active -> 
+super + {1-9,0}
+    if [[ "$(bspc query -D -d '^{1-9,0}')" != "0x"* ]]; then \
+        bspc monitor -a {1-9,0}; \
+    fi
+
+# send node to the given desktop
+super + shift + {1-9,0}
+    bspc node -d {I,II,III,IV,V,VI,VII,VIII,IX,X}
 
 #-------------------------------------------------------------------------------
 
