@@ -370,7 +370,7 @@ label-monitor = %name%
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-focused = %icon% %name%
+label-focused = %name%
 label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background}
 label-focused-underline = ${colors.foreground}
@@ -381,7 +381,7 @@ label-focused-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-urgent = %icon% %name%
+label-urgent = %name%
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.background}
 label-urgent-underline = ${colors.foreground}
@@ -392,7 +392,9 @@ label-urgent-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-occupied = %icon% %name%
+label-occupied = %name%
+label-occupied-foreground = ${colors.background}
+label-occupied-background = ${colors.foreground}
 label-occupied-underline = ${colors.foreground}
 label-occupied-padding = 1
 
@@ -401,8 +403,9 @@ label-occupied-padding = 1
 ;   %icon%
 ;   %index%
 ; Default: %icon% %name%
-label-empty = %icon% %name%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
 label-empty-padding = 1
 
 label-mode-padding = 1
