@@ -1369,7 +1369,7 @@ type = internal/xwindow
 label = %title%
 label-maxlen = 30
 
-format-padding = 1
+format-padding = 2
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
