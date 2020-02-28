@@ -371,9 +371,8 @@ label-monitor = %name%
 ;   %index%
 ; Default: %icon% %name%
 label-focused = %name%
-label-focused-foreground = ${colors.foreground}
-label-focused-background = ${colors.background}
-label-focused-underline = ${colors.foreground}
+label-focused-foreground = ${colors.background}
+label-focused-background = ${colors.foreground}
 label-focused-padding = 1
 
 ; Available tokens:
@@ -384,7 +383,8 @@ label-focused-padding = 1
 label-urgent = %name%
 label-urgent-foreground = ${colors.foreground}
 label-urgent-background = ${colors.background}
-label-urgent-underline = ${colors.foreground}
+label-urgent-underline = ${colors.red}
+label-urgent-overline = ${colors.red}
 label-urgent-padding = 1
 
 ; Available tokens:
@@ -393,9 +393,10 @@ label-urgent-padding = 1
 ;   %index%
 ; Default: %icon% %name%
 label-occupied = %name%
-label-occupied-foreground = ${colors.background}
-label-occupied-background = ${colors.foreground}
+label-occupied-foreground = ${colors.foreground}
+label-occupied-background = ${colors.background}
 label-occupied-underline = ${colors.foreground}
+label-occupied-overline = ${colors.foreground}
 label-occupied-padding = 1
 
 ; Available tokens:
@@ -1368,6 +1369,7 @@ type = internal/xwindow
 label = %title%
 label-maxlen = 30
 
+format-padding = 1
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 

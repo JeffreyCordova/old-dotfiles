@@ -95,6 +95,13 @@ super + {h,l}
 super + {j,k}
     bspc node -f {next,prev}.local
 
+# swap the current desktop with the active desktop of the prev/next monitor,
+# then reorder desktops
+super + shift + {h,l}
+    bspc desktop -s $(bspc query -D -d {prev,next}.active); \
+    bspc monitor -o; \
+    bspc monitor {prev,next} -o
+
 #-------------------------------------------------------------------------------
 
 #
