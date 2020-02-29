@@ -1,8 +1,8 @@
 #! /bin/sh
 
-bspc monitor DP-0 -d I
-bspc monitor DP-2 -d II
-bspc monitor DP-6 -d III
+bspc monitor DP-0 -d 1
+bspc monitor DP-2 -d 2
+bspc monitor DP-6 -d 3
 
 bspc config border_width 4
 bspc config window_gap 6 

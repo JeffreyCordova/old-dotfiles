@@ -36,7 +36,7 @@ super + y
 
 # swap the current node and the biggest node
 super + g
-	bspc node -s biggest
+	bspc node -s biggest.local
 
 #
 # state/flags
@@ -109,12 +109,12 @@ super + shift + {h,l}
 #   is active -> 
 super + {1-9,0}
     if [[ "$(bspc query -D -d '^{1-9,0}')" != "0x"* ]]; then \
-        bspc monitor -a {1-9,0}; \
+        bspc monitor -a ^{1-9,0}; \
     fi
 
 # send node to the given desktop
 super + shift + {1-9,0}
-    bspc node -d {I,II,III,IV,V,VI,VII,VIII,IX,X}
+    bspc node -d {1-9,0}
 
 #-------------------------------------------------------------------------------
 
