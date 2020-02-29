@@ -81,9 +81,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-#super + {_,shift + }{1-9,0}
-#	bspc {desktop -f,node -d} \
-#        {I,II,III,IV,V,VI,VII,VIII,IX,X}
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} {1-9,0}
 
 #---[custom]--------------------------------------------------------------------
 
@@ -107,14 +106,13 @@ super + shift + {h,l}
 #   is focused -> do nothing
 #   is hidden -> activate
 #   is active -> 
-super + {1-9,0}
-    if [[ "$(bspc query -D -d '^{1-9,0}')" != "0x"* ]]; then \
-        bspc monitor -a ^{1-9,0}; \
-    fi
+#super + {1-9,0}
+#    if [[ "$(bspc query -D -d '^{1-9,0}')" != "0x"* ]]; then \
+#        bspc monitor -a ^{1-9,0}; \
 
 # send node to the given desktop
-super + shift + {1-9,0}
-    bspc node -d {1-9,0}
+#super + shift + {1-9,0}
+#    bspc node -d {1-9,0}
 
 #-------------------------------------------------------------------------------
 

@@ -396,7 +396,7 @@ label-occupied = %name%
 label-occupied-foreground = ${colors.foreground}
 label-occupied-background = ${colors.background}
 label-occupied-underline = ${colors.foreground}
-label-occupied-overline = ${colors.foreground}
+;label-occupied-overline = ${colors.foreground}
 label-occupied-padding = 1
 
 ; Available tokens:
