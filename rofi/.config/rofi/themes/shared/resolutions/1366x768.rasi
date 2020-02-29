@@ -11,7 +11,7 @@
   list-element-padding:                 13px;
   list-element-margin:                  @inputbar-margin;
   list-element-border:                  0px 0px 0px 8px;
-  list-8-window-padding:                120px 300px;
+  list-8-window-padding:                136px 300px;
   /* appsmenu */
   apps-textbox-prompt-colon-padding:    16px;
 }
