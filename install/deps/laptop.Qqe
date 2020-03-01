@@ -162,9 +162,6 @@ xdg-user-dirs-gtk
 xdg-utils
 xf86-input-synaptics
 xf86-video-intel
-xmonad
-xmonad-contrib
-xmonad-utils
 xorg-xbacklight
 xorg-xev
 xorg-xinit
