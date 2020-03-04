@@ -115,8 +115,8 @@ super + {1-9,0}
     fi
 
 # send node to the given desktop
-#super + shift + {1-9,0}
-#    bspc node -d {1-9,0}
+super + shift + {1-9,0}
+    bspc node -d {1-9,0}
 
 #-------------------------------------------------------------------------------
 
