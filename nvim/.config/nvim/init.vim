@@ -60,6 +60,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'wesQ3/vim-windowswap'
 Plug 'godlygeek/tabular'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'rowantran/vim-bspwm-navigator'
 
 " langs
 Plug 'tmhedberg/SimpylFold'
