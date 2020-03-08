@@ -205,7 +205,7 @@ font-5 = "Hermit:size=10;3"
 ; Modules are added to one of the available blocks
 modules-left = bspwm xwindow
 modules-center =
-modules-right = arrow1 vpn wired-network arrow2 memory2 arrow3 uptime arrow4 volume arrow5 battery arrow6 date arrow7
+modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 uptime arrow4 volume arrow5 battery arrow6 date arrow7
 
 ; The separator will be inserted between the output of each module
 separator =
