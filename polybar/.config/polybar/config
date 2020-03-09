@@ -6,9 +6,9 @@
 # /_/            /____/                    
 
 
-;   ------------------
-;---[GENERAL SETTINGS]----------------------------------------------------------
-;   ------------------
+;   --------------------
+;---[ GENERAL SETTINGS ]----------------------------------------------------------
+;   --------------------
 
 ;-----------------------------------------------------------
 [global/wm]
@@ -63,9 +63,9 @@ format-offset =
 pseudo-transparency = false
 
 
-;   ----------------
-;---[COLOR SETTINGS]------------------------------------------------------------
-;   ----------------
+;   ------------------
+;---[ COLOR SETTINGS ]----------------------------------------------------------
+;   ------------------
 
 [colors]
 background = ${colors.grey}
@@ -84,9 +84,9 @@ purple = #C678DD
 cyan = #56B6C2
 
 
-;   --------------
-;---[BAR SETTINGS]--------------------------------------------------------------
-;   --------------
+;   ----------------
+;---[ BAR SETTINGS ]------------------------------------------------------------
+;   ----------------
 
 [bar/default]
 
@@ -205,7 +205,7 @@ font-5 = "Hermit:size=10;3"
 ; Modules are added to one of the available blocks
 modules-left = bspwm xwindow
 modules-center =
-modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 uptime arrow4 volume arrow5 battery arrow6 date arrow7
+modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 backlight arrow4 volume arrow5 battery arrow6 date arrow7
 
 ; The separator will be inserted between the output of each module
 separator =
@@ -238,7 +238,7 @@ tray-position = right
 tray-detached = false
 
 ; Tray icon max size
-tray-maxsize = 20
+tray-maxsize = 16
 
 ; Background ARGB color for the tray container
 ; By default, the tray container will use the bar background color.
@@ -291,9 +291,9 @@ cursor-click =
 cursor-scroll =
 
 
-;   ----------------
-;---[BSPWM SETTINGS]------------------------------------------------------------
-;   ----------------
+;   ------------------
+;---[ BSPWM SETTINGS ]----------------------------------------------------------
+;   ------------------
 
 [module/bspwm]
 type = internal/bspwm
@@ -433,9 +433,9 @@ label-marked = [m]
 ;format-background = ${colors.background}
 
 
-;   ------------------
-;---[MODULES - ARROWS]----------------------------------------------------------
-;   ------------------
+;   ----------
+;---[ ARROWS ]------------------------------------------------------------------
+;   ----------
 
 [module/arrow1]
 ; grey to red
@@ -494,9 +494,9 @@ content-foreground = ${colors.grey}
 content-background = ${colors.cyan}
 
 
-;   ---------
-;---[MODULES]-------------------------------------------------------------------
-;   ---------
+;   -----------
+;---[ MODULES ]-------------------------------------------------------------------
+;   -----------
 
 
 ;-----------------------------------------------------------
@@ -504,8 +504,8 @@ content-background = ${colors.cyan}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = ${colors.grey}
+format-background = ${colors.yellow}
 format-prefix-foreground = #7D49B6
 format-prefix-underline = #7D49B6
 format-underline = #7D49B6
@@ -514,26 +514,38 @@ format-underline = #7D49B6
 ;-----------------------------------------------------------
 [module/backlight]
 ;https://github.com/jaagr/polybar/wiki/Module:-backlight
-
 type = internal/backlight
 
 ; Use the following command to list available cards:
 ; $ ls -1 /sys/class/backlight/
 card = intel_backlight
 
+; Enable changing the backlight with the scroll wheel
+; NOTE: Polybar will write to
+;   `/sys/class/backlight/${self.card}/brightness`
+; which requires polybar to have write access to that file.
+; DO NOT RUN POLYBAR AS ROOT
+; The recommended way is to add the user to the `video` group and give that
+; group write privileges for the `brightness` file.
+; See the ArchWiki for more information:
+;   https://wiki.archlinux.org/index.php/Backlight#ACPI
+; Default: false
+enable-scroll = true
+
 ; Available tags:
 ;   <label> (default)
 ;   <ramp>
 ;   <bar>
 format = <label>
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = ${colors.grey}
+format-background = ${colors.yellow}
+format-prefix = "  "
 
 ; Available tokens:
 ;   %percentage% (default)
 label = %percentage%%
 
-; Only applies if <ramp> is used
+; Only applies if <ramp> is use
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
@@ -559,19 +571,19 @@ format-charging = <animation-charging> <label-charging>
 label-charging =  %percentage%%
 format-charging-prefix = " "
 label-charging-foreground = ${colors.grey}
-format-charging-foreground = #282C34
+format-charging-foreground = ${colors.grey}
 format-charging-background = ${colors.purple}
 
 format-discharging = <ramp-capacity> <label-discharging>
 label-discharging =  %percentage%%
 format-discharging-prefix = " "
-label-discharging-foreground = #282C34
-format-discharging-foreground = #282C34
+label-discharging-foreground = ${colors.grey}
+format-discharging-foreground = ${colors.grey}
 format-discharging-background = ${colors.purple}
 
 format-full-prefix = "  "
-format-full-prefix-foreground = #282C34
-format-foreground = #282C34
+format-full-prefix-foreground = ${colors.grey}
+format-foreground = ${colors.grey}
 format-background = ${colors.purple}
 
 ramp-capacity-0 = 
@@ -579,14 +591,14 @@ ramp-capacity-1 = 
 ramp-capacity-2 = 
 ramp-capacity-3 = 
 ramp-capacity-4 = 
-ramp-capacity-foreground = #282C34
+ramp-capacity-foreground = ${colors.grey}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
-animation-charging-foreground = #282C34
+animation-charging-foreground = ${colors.grey}
 animation-charging-framerate = 750
 
 
@@ -664,10 +676,10 @@ type = internal/cpu
 ; Seconds to sleep between updates
 ; Default: 1
 interval = 1
-format-foreground = #282C34
+format-foreground = ${colors.grey}
 format-background = ${colors.yellow}
 format-prefix = "  "
-format-prefix-foreground = #282C34
+format-prefix-foreground = ${colors.grey}
 
 label-font = 1
 
@@ -693,13 +705,13 @@ type = internal/date
 interval = 1
 ; See "http://en.cppreference.com/w/cpp/io/manip/put_time" for details on how to format the date string
 ; NOTE: if you want to use syntax tags here you need to use %%{...}
-date-alt = "%d-%m-%Y%"
-date = "%Y-%m-%d"
+date = "%m-%d-%Y%"
+date-alt = "%Y-%m-%d"
 time = %l:%M:%S
 time-alt = %H:%M:%S
 format-prefix = "  "
-format-prefix-foreground = #282C34
-format-foreground = #282C34
+format-prefix-foreground = ${colors.grey}
+format-foreground = ${colors.grey}
 format-background = ${colors.cyan}
 label = %date% | %time%
 
@@ -741,7 +753,7 @@ label-monitor = %name%
 label-active = %name%
 label-active-foreground = ${colors.foreground}
 label-active-background = ${colors.background}
-label-active-underline= ${colors.red}
+label-active-underline = ${colors.red}
 label-active-padding = 4
 
 label-occupied = %name%
@@ -832,7 +844,7 @@ format-underline = #0084FF
 [module/jgmenu]
 type = custom/script
 interval = 120
-exec = echo "ArcoLinux"
+exec = echo "ArchLinux"
 click-left = "jgmenu_run >/dev/null 2>&1 &"
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
@@ -903,8 +915,8 @@ label = %percentage_used%%
 
 format = Mem: <label>
 format-prefix = "  "
-format-prefix-foreground = #282C34
-format-foreground = #282C34
+format-prefix-foreground = ${colors.grey}
+format-foreground = ${colors.grey}
 format-background = ${colors.green}
 
 
@@ -965,8 +977,8 @@ interface = wlp58s0
 label-connected = "%upspeed:7% | "
 format-connected = <label-connected>
 format-connected-prefix = " "
-format-connected-prefix-foreground = #282C34
-format-connected-foreground = #282C34
+format-connected-prefix-foreground = ${colors.grey}
+format-connected-foreground = ${colors.grey}
 format-connected-background = ${colors.red}
 
 
@@ -978,8 +990,8 @@ interface = wlp58s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = ""
-format-connected-prefix-foreground = #282C34
-format-connected-foreground = #282C34
+format-connected-prefix-foreground = ${colors.grey}
+format-connected-foreground = ${colors.grey}
 format-connected-background = ${colors.red}
 
 
@@ -1124,10 +1136,10 @@ exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
 interval = 100
 label = Uptime : %output%
 
-format-foreground = #282C34
+format-foreground = ${colors.grey}
 format-background = ${colors.yellow}
 format-prefix = "  "
-format-prefix-foreground = #282C34
+format-prefix-foreground = ${colors.grey}
 format-underline = ${colors.yellow}
 
 
@@ -1196,17 +1208,17 @@ ramp-volume-1 = 
 ;format-volume = "<label-volume>  <bar-volume>"
 ;
 ;label-volume = " "
-;label-volume-foreground = #282C34
+;label-volume-foreground = ${colors.grey}
 ;label-muted = muted
 ;
 ;bar-volume-width = 10
-;bar-volume-foreground-0 = #282C34
-;bar-volume-foreground-1 = #282C34
-;bar-volume-foreground-2 = #282C34
-;bar-volume-foreground-3 = #282C34
-;bar-volume-foreground-4 = #282C34
-;bar-volume-foreground-5 = #282C34
-;bar-volume-foreground-6 = #282C34
+;bar-volume-foreground-0 = ${colors.grey}
+;bar-volume-foreground-1 = ${colors.grey}
+;bar-volume-foreground-2 = ${colors.grey}
+;bar-volume-foreground-3 = ${colors.grey}
+;bar-volume-foreground-4 = ${colors.grey}
+;bar-volume-foreground-5 = ${colors.grey}
+;bar-volume-foreground-6 = ${colors.grey}
 ;bar-volume-gradient = false
 ;bar-volume-indicator = 
 ;bar-volume-indicator-font = 2
@@ -1256,20 +1268,20 @@ interval = 3.0
 label-connected =  %ifname%
 label-disconnected = disconnected
 
-format-connected-foreground = #282C34
+format-connected-foreground = ${colors.grey}
 format-connected-background = ${colors.red}
 format-connected-underline = ${colors.red}
 format-connected-prefix = "  "
-format-connected-prefix-foreground = #282C34
+format-connected-prefix-foreground = ${colors.grey}
 format-connected-prefix-background = ${colors.red}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${colors.red}
 format-disconnected-background = ${colors.red}
 format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = #282C34
+format-disconnected-prefix-foreground = ${colors.grey}
 format-disconnected-prefix-background = ${colors.red}
-label-disconnected-foreground = #282C34
+label-disconnected-foreground = ${colors.grey}
 
 
 ;-----------------------------------------------------------
@@ -1282,22 +1294,22 @@ label-connected = %essid%
 
 format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = #282C34
+format-connected-foreground = ${colors.grey}
 format-connected-background = ${colors.red}
 format-connected-prefix = "  "
-format-connected-prefix-foreground = #282C34
+format-connected-prefix-foreground = ${colors.grey}
 format-connected-prefix-background = ${colors.red}
 format-connected-underline = ${colors.red}
 
 label-disconnected = disconnected
-label-disconnected-foreground = #282C34
+label-disconnected-foreground = ${colors.grey}
 label-disconnected-background = ${colors.red}
 
 format-disconnected = <label-disconnected>
-format-disconnected-foreground = #282C34
+format-disconnected-foreground = ${colors.grey}
 format-disconnected-background = ${colors.red}
 format-disconnected-prefix = "  "
-format-disconnected-prefix-foreground = #282C34
+format-disconnected-prefix-foreground = ${colors.grey}
 format-disconnected-prefix-background = ${colors.red}
 format-disconnected-underline = ${colors.red}
 
@@ -1316,7 +1328,8 @@ ramp-signal-foreground = ${colors.green}
 [module/xbacklight]
 ;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
 type = internal/xbacklight
-format = <label> <bar>
+card = intel_backlight
+format = <label>
 format-prefix = "   "
 format-prefix-foreground = ${colors.foreground}
 format-prefix-background = ${colors.background}
@@ -1383,6 +1396,6 @@ interval = 5
 format-underline = ${colors.red}
 format-background = ${colors.red}
 format-prefix = "  "
-format-prefix-foreground = #282C34
+format-prefix-foreground = ${colors.grey}
 
 ; vim:ft=dosini
