@@ -43,8 +43,8 @@ super + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+super + {t,shift + t,s)
+	bspc node -t {tiled,pseudo_tiled,floating}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -84,7 +84,12 @@ super + {o,i}
 #super + {_,shift + }{1-9,0}
 #	bspc {desktop -f,node -d} '^{1-9,10}'
 
+
 #---[custom]--------------------------------------------------------------------
+
+# toggle fullscreen
+super + f
+    bspc node -t '~fullscreen'
 
 # focus the next/previous monitor
 super + {h,l}
@@ -118,6 +123,7 @@ super + {1-9,0}
 super + shift + {1-9,0}
     bspc node -d {1-9,0}
 
+
 #---[special keys]----------------------------------------------------------------
 
 # brightness down/up
@@ -135,6 +141,7 @@ XF86AudioMute
 # volume up (over 100%)
 shift + XF86AudioRaiseVolume
     pavolume volup --noshow --nolimit
+
 
 #-------------------------------------------------------------------------------
 

@@ -37,4 +37,5 @@ source $HOME/.zsh/hotkeys.zsh
 #---[aliases]-------------------------------------------------------------------
 source $HOME/.zsh/aliases.zsh
 
+#---[prompt]--------------------------------------------------------------------
 eval "$(starship init zsh)"
