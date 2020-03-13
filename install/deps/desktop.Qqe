@@ -17,6 +17,8 @@ dnsmasq
 dunst
 ebtables
 efibootmgr
+expressvpn
+expressvpn-gui
 fakeroot
 feh
 figlet
@@ -31,6 +33,7 @@ gcc
 gcc-fortran
 gettext
 git
+glances
 gnome-keyring
 gnome-themes-extra
 gnuplot
@@ -61,11 +64,15 @@ make
 man-db
 man-pages
 mate-polkit
+mullpy
+mullvad-tray
+mullvad-vpn
 ncdu
 neovim
 nerd-fonts-complete
 network-manager-applet
 networkmanager
+networkmanager-openvpn
 nm-connection-editor
 nnn
 noto-fonts
@@ -76,6 +83,7 @@ nvidia-settings
 nvidia-utils
 openbsd-netcat
 openssh
+openvpn
 otf-font-awesome-5-free
 otf-hermit
 otf-overpass
