@@ -87,6 +87,7 @@ openvpn
 otf-font-awesome-5-free
 otf-hermit
 otf-overpass
+ovmf
 pacman
 pacmixer
 papirus-folders-git
@@ -114,6 +115,7 @@ seahorse
 sed
 shellcheck-static
 siji-git
+spice-vdagent
 starship
 steam
 steam-fonts
@@ -140,6 +142,7 @@ vi
 vim
 virt-manager
 virt-viewer
+virtio-win
 visual-studio-code-bin
 wget
 which

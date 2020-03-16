@@ -85,6 +85,7 @@ efibootmgr
 efivar
 egl-wayland
 eglexternalplatform
+elfutils
 enchant
 exiv2
 expat
@@ -368,6 +369,7 @@ liblqr
 libluv
 libmaxminddb
 libmfx
+libmicrohttpd
 libmm-glib
 libmng
 libmnl
@@ -571,6 +573,7 @@ osinfo-db
 otf-font-awesome-5-free
 otf-hermit
 otf-overpass
+ovmf
 oxygen-icons
 p11-kit
 pacman
@@ -708,6 +711,7 @@ speex
 speexdsp
 spice
 spice-gtk
+spice-vdagent
 sqlite
 starship
 startup-notification
@@ -761,6 +765,7 @@ virglrenderer
 virt-install
 virt-manager
 virt-viewer
+virtio-win
 visual-studio-code-bin
 volume_key
 vte-common
