@@ -23,7 +23,7 @@ entry {
 #prompt {
   padding: @prompt-padding;
   background-color: @accent;
-  text-color: @background;
+  text-color: @background-dark;
 }
 #textbox-prompt-colon {
   expand: false;
