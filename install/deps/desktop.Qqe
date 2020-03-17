@@ -65,7 +65,6 @@ man-db
 man-pages
 mate-polkit
 mullpy
-mullvad-tray
 mullvad-vpn
 ncdu
 neovim
@@ -104,6 +103,7 @@ posy-cursors
 powerline-fonts
 pulseaudio-alsa
 python-pynvim
+qbittorrent
 qemu
 qgnomeplatform
 qt5ct

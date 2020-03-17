@@ -430,6 +430,7 @@ libtheora
 libtiff
 libtirpc
 libtool
+libtorrent-rasterbar
 libunistring
 libunwind
 liburcu
@@ -525,7 +526,6 @@ mpfr
 msgpack-c
 mtdev
 mullpy
-mullvad-tray
 mullvad-vpn
 ncdu
 ncurses
@@ -650,8 +650,6 @@ python-psutil
 python-pygments
 python-pynvim
 python-pyparsing
-python-pyqt5
-python-pyqt5-sip
 python-pytoml
 python-pytz
 python-requests
@@ -671,6 +669,7 @@ python-sphinxcontrib-serializinghtml
 python-toml
 python-urllib3
 python-webencodings
+qbittorrent
 qemu
 qgnomeplatform
 qjson
