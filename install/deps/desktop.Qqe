@@ -17,6 +17,7 @@ dnsmasq
 dunst
 ebtables
 efibootmgr
+exfat-utils
 expressvpn
 expressvpn-gui
 fakeroot
@@ -67,10 +68,12 @@ mate-polkit
 mullpy
 mullvad-vpn
 ncdu
+neofetch
 neovim
 nerd-fonts-complete
 network-manager-applet
 networkmanager
+networkmanager-fortisslvpn
 networkmanager-openvpn
 nm-connection-editor
 nnn
@@ -81,6 +84,7 @@ nvidia
 nvidia-settings
 nvidia-utils
 openbsd-netcat
+openfortigui
 openssh
 openvpn
 otf-font-awesome-5-free
@@ -163,5 +167,6 @@ yay
 zathura
 zathura-pdf-mupdf
 zip
+zoom
 zplug
 zsh
