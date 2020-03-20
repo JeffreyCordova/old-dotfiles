@@ -172,6 +172,7 @@ gvfs-mtp
 gzip
 harfbuzz
 harfbuzz-icu
+hddtemp
 hicolor-icon-theme
 hspell
 http-parser
@@ -629,12 +630,15 @@ pyside2
 python
 python-appdirs
 python-babel
+python-bottle
 python-cachecontrol
 python-cairo
 python-chardet
 python-click
 python-colorama
 python-contextlib2
+python-cycler
+python-dateutil
 python-distlib
 python-distro
 python-docutils
@@ -643,10 +647,15 @@ python-gobject
 python-greenlet
 python-html5lib
 python-idna
+python-ifaddr
 python-imagesize
 python-jinja
+python-kiwisolver
 python-markupsafe
+python-matplotlib
 python-msgpack
+python-netifaces
+python-numpy
 python-ordered-set
 python-packaging
 python-pep517
@@ -675,6 +684,7 @@ python-sphinxcontrib-serializinghtml
 python-toml
 python-urllib3
 python-webencodings
+python-zeroconf
 qbittorrent
 qemu
 qgnomeplatform

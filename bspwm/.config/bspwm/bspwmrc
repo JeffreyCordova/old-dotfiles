@@ -3,9 +3,8 @@
 if [ "$(hostname)" = "laptop" ]; then
     bspc monitor eDP-1 -d 1
 elif [ "$(hostname)" = "WS-2UA8261L5D" ]; then
-    bspc monitor DP-0 -d 1
+    bspc monitor DP-1 -d 1
     bspc monitor DP-2 -d 2
-#    bspc monitor DP-4 -d 3
 fi
 
 bspc config border_width 4

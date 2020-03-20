@@ -46,6 +46,7 @@ gvfs
 gvfs-google
 gvfs-mtp
 gzip
+hddtemp
 imagemagick
 intel-ucode
 jdk-openjdk
@@ -106,7 +107,10 @@ polybar
 posy-cursors
 powerline-fonts
 pulseaudio-alsa
+python-bottle
+python-matplotlib
 python-pynvim
+python-zeroconf
 qbittorrent
 qemu
 qgnomeplatform
