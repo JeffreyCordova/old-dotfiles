@@ -1,3 +1,4 @@
 nvim/.config/nvim/autoload/*
 nvim/.config/nvim/plugged/*
 fonts/.local/share/fonts/.uuid
+julia/.julia/logs/*

@@ -7,7 +7,9 @@
 
 #---[colors]--------------------------------------------------------------------
 alias ls="ls_extended"
-alias l="ls -alh"
+alias l="ls -lh"
+alias la="ls -alh"
+
 alias grep="grep --color=auto"
 
 #---[print PATH]----------------------------------------------------------------
@@ -15,8 +17,11 @@ alias path='printf "${PATH//:/\\n}\n"'
 
 #---[update mirrors]------------------------------------------------------------
 alias reflector="sudo reflector --verbose \
+                                --threads $(nproc) \
                                 --protocol https \
-                                --latest 150 \
+                                --country 'United States' \
+                                --latest 200 \
+                                --fastest 50 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 

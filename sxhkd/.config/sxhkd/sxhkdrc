@@ -85,19 +85,26 @@ super + {o,i}
 #	bspc {desktop -f,node -d} '^{1-9,10}'
 
 
+#   --------
 #---[custom]--------------------------------------------------------------------
+#   --------
+
+#---[state/flags]
 
 # toggle fullscreen
 super + f
     bspc node -t '~fullscreen'
 
-# focus the next/previous monitor
-super + {h,l}
-    bspc monitor -f {prev,next}
+
+#---[focus/swap]--------------------------------
 
 # focus the next/previous node in the current desktop
 super + {j,k}
     bspc node -f {next,prev}.local
+
+# focus the next/previous monitor
+super + {h,l}
+    bspc monitor -f {prev,next}
 
 # swap the current desktop with the active desktop of the prev/next monitor,
 # then reorder desktops

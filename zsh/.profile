@@ -44,5 +44,7 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")       # stop underline
 
 #---[PATH]----------------------------------------------------------------------
 export PATH="${HOME}/.local/bin:${PATH}"
-export MANPATH="${HOME}/.local/share/man:$MANPATH"
+export MANPATH="${HOME}/.local/share/man:${MANPATH}"
+
+export PATH="${HOME}/.cargo/bin:${PATH}"
 
