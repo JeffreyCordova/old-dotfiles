@@ -30,7 +30,7 @@ sxhkd &
 
 picom -b
 
-feh --bg-scale --no-xinerama "$HOME/.local/wallpaper/hillside.jpg"
+feh --bg-scale --no-xinerama "$HOME/.local/wallpaper/kaer_morhen.jpg"
 
 xsetroot -cursor_name left_ptr
 
