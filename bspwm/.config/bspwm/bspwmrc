@@ -1,8 +1,12 @@
 #!/bin/sh
 
-bspc monitor DP-0 -d 1
-bspc monitor DP-2 -d 2
-bspc monitor DP-4 -d 3 0
+if [ "$(hostname)" = "laptop-lx" ]; then
+    bspc monitor eDP-1 -d 1 0
+elif [ "$(hostname)" = "desktop-lx" ]; then
+    bspc monitor DP-0 -d 1
+    bspc monitor DP-2 -d 2
+    bspc monitor DP-4 -d 3 0
+fi
 
 bspc config border_width 4
 bspc config window_gap 6 
@@ -30,7 +34,7 @@ sxhkd &
 
 picom -b
 
-feh --bg-scale --no-xinerama "$HOME/.local/wallpaper/kaer_morhen.jpg"
+feh --bg-scale "$HOME/.local/wallpaper/rain.jpg"
 
 xsetroot -cursor_name left_ptr
 

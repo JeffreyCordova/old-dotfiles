@@ -6,9 +6,10 @@
 #                                  
 
 #---[colors]--------------------------------------------------------------------
-alias ls="ls_extended"
-alias l="ls -lh"
-alias la="ls -alh"
+alias ls="exa --icons"
+#alias ls="ls_extended"
+alias l="ls -lhg"
+alias la="ls -lahg"
 
 alias grep="grep --color=auto"
 
@@ -29,3 +30,6 @@ alias reflector="sudo reflector --verbose \
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' \
                                   --layout=reverse \
                                   --bind 'enter:execute(pacman -Qil {} | less)'"
+
+#---[optimus-manager]-----------------------------------------------------------
+alias om="optimus-manager"

@@ -110,7 +110,7 @@ super + {h,l}
 # then reorder desktops
 super + shift + {h,l}
     bspc desktop -s $(bspc query -D -d {prev,next}.active); \
-    bspc monitor -o; \
+    bspc monitor -o $(bspc query -D -m --names | sort); \
     bspc monitor {prev,next} -o
 
 # if the given desktop:
@@ -124,6 +124,7 @@ super + {1-9,0}
         bspc desktop -f $desk; \
     else \
         bspc monitor -a $desk; \
+        bspc monitor -o $(bspc query -D -m --names | sort); \
     fi
 
 # send node to the given desktop

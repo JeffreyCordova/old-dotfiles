@@ -200,13 +200,13 @@ font-1 = "Hack Nerd Font:size=15;4"
 font-2 = "Font Awesome 5 Free:style=Regular:pixelsize=8;1"
 font-3 = "Font Awesome 5 Free:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
-font-5 = "Hermit:size=10;3"
+font-5 = "Hurmit Nerd Font:size=10;3"
 
 ; Modules are added to one of the available blocks
 modules-left = bspwm xwindow
 modules-center =
-;modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 backlight arrow4 volume arrow5 battery arrow6 date arrow7
-modules-right = arrow1 vpn wired-network arrow2 memory2 arrow3 cpu2 arrow4 volume arrow5 filesystem arrow6 date arrow7
+modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 backlight arrow4 volume arrow5 battery arrow6 date arrow7
+;modules-right = arrow1 vpn wired-network arrow2 memory2 arrow3 cpu2 arrow4 volume arrow5 filesystem arrow6 date arrow7
 
 ; The separator will be inserted between the output of each module
 separator =
@@ -582,16 +582,16 @@ label-discharging-foreground = ${colors.grey}
 format-discharging-foreground = ${colors.grey}
 format-discharging-background = ${colors.purple}
 
-format-full-prefix = "  "
+format-full-prefix = "   "
 format-full-prefix-foreground = ${colors.grey}
 format-foreground = ${colors.grey}
 format-background = ${colors.purple}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = " " 
+ramp-capacity-1 = " " 
+ramp-capacity-2 = " "
+ramp-capacity-3 = " "
+ramp-capacity-4 = " "
 ramp-capacity-foreground = ${colors.grey}
 
 animation-charging-0 = 
