@@ -30,3 +30,6 @@ alias reflector="sudo reflector --verbose \
 alias pacbrowse="pacman -Qq | fzf --preview 'pacman -Qil {}' \
                                   --layout=reverse \
                                   --bind 'enter:execute(pacman -Qil {} | less)'"
+
+#---[optimus-manager]-----------------------------------------------------------
+alias om="optimus-manager"
