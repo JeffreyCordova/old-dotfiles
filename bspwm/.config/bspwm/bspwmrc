@@ -30,7 +30,9 @@ sxhkd &
 
 picom -b
 
-feh --bg-scale --no-xinerama "$HOME/.local/wallpaper/witcher.jpg"
+feh --bg-scale "$HOME/.local/wallpaper/apoc_forest_1.png" \
+               "$HOME/.local/wallpaper/apoc_forest_2.png" \
+               "$HOME/.local/wallpaper/apoc_forest_3.png"
 
 xsetroot -cursor_name left_ptr
 
