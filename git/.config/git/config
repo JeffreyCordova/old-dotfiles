@@ -7,7 +7,7 @@
 [push]
     default = simple
 [merge]
-    tool = vimdiff
+    tool = nvimdiff
     ff = only
 [mergetool]
     prompt = false

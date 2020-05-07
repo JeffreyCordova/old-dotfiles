@@ -75,9 +75,10 @@ yellow = #E5C07B
 blue = #61AFEF
 purple = #C678DD
 cyan = #56B6C2
+light_grey = #ABB2BF
 
 background = ${colors.grey}
-foreground = #ABB2BF
+foreground = ${colors.light_grey}
 alert = ${colors.red}
 volume-min = ${colors.green}
 volume-med = ${colors.yellow}
@@ -205,8 +206,8 @@ font-5 = "Hurmit Nerd Font:size=10;3"
 ; Modules are added to one of the available blocks
 modules-left = bspwm xwindow
 modules-center =
-modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 backlight arrow4 volume arrow5 battery arrow6 date arrow7
-;modules-right = arrow1 vpn wired-network arrow2 memory2 arrow3 cpu2 arrow4 volume arrow5 filesystem arrow6 date arrow7
+;modules-right = arrow1 vpn wireless-network arrow2 memory2 arrow3 backlight arrow4 volume arrow5 battery arrow6 date arrow7
+modules-right = arrow1 vpn wired-network arrow2 memory2 arrow3 cpu2 arrow4 volume arrow5 filesystem arrow6 date arrow7
 
 ; The separator will be inserted between the output of each module
 separator =
