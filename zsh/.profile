@@ -48,3 +48,5 @@ export MANPATH="${HOME}/.local/share/man:${MANPATH}"
 
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
+export PATH="${HOME}/julia/usr/bin:${PATH}"
+

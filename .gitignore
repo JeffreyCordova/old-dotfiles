@@ -3,8 +3,8 @@ nvim/.config/nvim/plugged/*
 
 fonts/.local/share/fonts/.uuid
 
-julia/.julia/logs/*
 julia/.julia/compiled/*
 julia/.julia/environments/*
+julia/.julia/logs/*
 julia/.julia/packages/*
 julia/.julia/registries/*

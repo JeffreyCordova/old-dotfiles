@@ -34,7 +34,13 @@ sxhkd &
 
 picom -b
 
-feh --bg-scale "$HOME/.local/wallpaper/rain.jpg"
+if [ "$(hostname)" = "laptop-lx" ]; then
+    feh --bg-scale "$HOME/.local/wallpaper/rain.jpg"
+elif [ "$(hostname)" = "desktop-lx" ]; then
+    feh --bg-scale "$HOME/.local/wallpaper/apoc_forest_1.png" \
+                   "$HOME/.local/wallpaper/apoc_forest_2.png" \
+                   "$HOME/.local/wallpaper/apoc_forest_3.png"
+fi
 
 xsetroot -cursor_name left_ptr
 
