@@ -48,6 +48,8 @@ Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
 Plug 'neomake/neomake'
 Plug 'junegunn/fzf'
 Plug 'scrooloose/syntastic'
+Plug 'numirias/semshi'
+Plug 'davidhalter/jedi-vim'
 
 " git
 Plug 'airblade/vim-gitgutter'

@@ -5,16 +5,26 @@
 # /___/____/_/ /_/\___/_/ /_/|___/  
 #                                   
 
+
+#   --------
 #---[colors]--------------------------------------------------------------------
+#   --------
+
 mainc="4"
 sidec="$((mainc + 8))"
 
+#   --------------
 #---[history file]--------------------------------------------------------------
+#   --------------
+
 export HISTSIZE=1000
 export HISTFILE="$HOME/.zsh_history"
 export SAVEHIST=1000
 
+#   ---------------------
 #---[syntax highlighting]-------------------------------------------------------
+#   ---------------------
+
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main)
 
@@ -40,3 +50,4 @@ export ZSH_HIGHLIGHT_STYLES
 export ZSH_HIGHLIGHT_HIGHLIGHTERS
 
 unsetopt BG_NICE
+

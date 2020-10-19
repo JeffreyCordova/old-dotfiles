@@ -134,21 +134,49 @@ super + shift + {1-9,0}
 
 #---[special keys]----------------------------------------------------------------
 
-# brightness down/up
-{XF86MonBrightnessDown,XF86MonBrightnessUp}
-    brightnessctl set 5%{-,+}
+# Fn + Space
+#XF86WakeUp
 
-# toggle mute audio
+# F1 - toggle mute audio
 XF86AudioMute
-    pavolume mutetoggle --noshow
+    pulseaudio-ctl mute
 
-# volume down/up
-{XF86AudioLowerVolume,XF86AudioRaiseVolume}
-    pavolume vol{down,up} --noshow
+# F2/F3 - volume down/up
+XF86Audio{Lower,Raise}Volume
+    pulseaudio-ctl {down,up}
 
-# volume up (over 100%)
-shift + XF86AudioRaiseVolume
-    pavolume volup --noshow --nolimit
+# F4 - toggle mute mic
+XF86AudioMicMute
+    pulseaudio-ctl mute-input
+
+# F5/F6 - brightness down/up
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+    brightnessctl -e set {5%-,+5%}
+
+# F7 - project?
+#XF86Display
+
+# F8 - toggle enable/disable wifi
+#XF86WLAN
+
+# F9 - settings?
+#XF86Tools
+
+# F10 - search?
+#XF86Search
+
+# F11 - ?
+#XF86LaunchA
+
+# F12 - ?
+#XF86Explorer
+
+#----
+
+#XF86Calculator
+#Super_L
+#XF86HomePage
+#Super_L
 
 
 #-------------------------------------------------------------------------------

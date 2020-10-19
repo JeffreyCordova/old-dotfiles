@@ -1,0 +1,14 @@
+format = """
+[┌─\\[[$username$hostname](bright-white)\\]](bold red) $git_branch$git_commit$git_state$git_status
+[│](bold red)$directory
+[└──>](bold red) [\\$](bold bright-green) """
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[hostname]
+ssh_only = false
+format = "[$hostname]($style)"
+
+[username]
+show_always = true
