@@ -72,7 +72,6 @@ alias grep="grep --color=auto"
 alias path='printf "${PATH//:/\\n}\n"'
 
 alias reflector="sudo reflector --verbose \
-                                --threads $(nproc) \
                                 --protocol https \
                                 --country 'United States' \
                                 --latest 100 \
