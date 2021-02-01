@@ -11,7 +11,7 @@ hi link NERDTreeLinkDir NERDTreeLinkFile
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ "Modified"  : "~",
     \ "Staged"    : "+",
     \ "Untracked" : "+",

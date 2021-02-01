@@ -67,6 +67,9 @@ export LESS_TERMCAP_ue
 export PATH="${HOME}/.local/bin:${PATH}"
 export MANPATH="${HOME}/.local/share/man:${MANPATH}"
 
+export PATH="${HOME}/.node_modules/bin:${PATH}"
+export npm_config_prefix=~/.node_modules
+
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 export PATH="${HOME}/julia/usr/bin:${PATH}"

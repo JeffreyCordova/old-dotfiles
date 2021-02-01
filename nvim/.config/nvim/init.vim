@@ -42,11 +42,22 @@ Plug 'tpope/vim-surround'
 Plug 'bhurlow/vim-parinfer'
 
 " autocompletion
-Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
+"Plug 'Shougo/deoplete.nvim', {
+"    \ 'do': ':UpdateRemotePlugins'
+"    \ }
+Plug 'neoclide/coc.nvim', {
+    \ 'branch': 'release'
+    \ }
 
 " syntax check, task runner
 Plug 'neomake/neomake'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', {
+    \ 'do': { -> fzf#install() }
+    \ }
+Plug 'yuki-yano/fzf-preview.vim', {
+    \ 'branch': 'release/rpc',
+    \ 'do': ':UpdateRemotePlugins'
+    \ }
 Plug 'scrooloose/syntastic'
 Plug 'numirias/semshi'
 Plug 'davidhalter/jedi-vim'
@@ -68,7 +79,6 @@ Plug 'rowantran/vim-bspwm-navigator'
 Plug 'tmhedberg/SimpylFold'
 Plug 'pangloss/vim-javascript'
 Plug 'julialang/julia-vim'
-Plug 'mboughaba/i3config.vim'
 Plug 'cespare/vim-toml'
 
 call plug#end()
