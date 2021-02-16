@@ -5,7 +5,7 @@
 " /_/ /_/|___/_/_/ /_/ /_/
 "
 
-"---[Autoinstall]--------------------------------------------------------------
+"---[auto-install]--------------------------------------------------------------
 let CONFIGS = $XDG_CONFIG_HOME
 if CONFIGS == ""
     let CONFIGS = $HOME . "/.config"
@@ -17,8 +17,7 @@ if empty(glob(CONFIGS . '/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-"---[Plug]---------------------------------------------------------------------
-
+"---[vim-plug]---------------------------------------------------------------------
 call plug#begin(CONFIGS . '/nvim/plugged')
 
 " visual
@@ -42,9 +41,6 @@ Plug 'tpope/vim-surround'
 Plug 'bhurlow/vim-parinfer'
 
 " autocompletion
-"Plug 'Shougo/deoplete.nvim', {
-"    \ 'do': ':UpdateRemotePlugins'
-"    \ }
 Plug 'neoclide/coc.nvim', {
     \ 'branch': 'release'
     \ }
@@ -58,7 +54,7 @@ Plug 'yuki-yano/fzf-preview.vim', {
     \ 'branch': 'release/rpc',
     \ 'do': ':UpdateRemotePlugins'
     \ }
-Plug 'scrooloose/syntastic'
+Plug 'dense-analysis/ale'
 Plug 'numirias/semshi'
 Plug 'davidhalter/jedi-vim'
 
@@ -167,12 +163,12 @@ set mouse=a
 " sudo write
 :command Suw :w !sudo tee %
 
-"---[Plugins]------------------------------------------------------------------
+"---[plugins]------------------------------------------------------------------
 for f in glob(CONFIGS . "/nvim/init.d/*.vim", 0, 1)
     execute 'source' f
 endfor
 
-"---[Mappings]-----------------------------------------------------------------
+"---[mappings]-----------------------------------------------------------------
 " nohl shortcut
 nnoremap <silent> <Leader>/ :nohl<cr>
 
@@ -201,6 +197,7 @@ nnoremap <silent> <C-H> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-J> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-K> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-L> :TmuxNavigateRight<cr>
+
 " C-h is recognized as <BS> in nvim due to libtermkey
 " see https://github.com/neovim/neovim/issues/2048
 if has("nvim")
