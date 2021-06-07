@@ -13,6 +13,7 @@
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 zplug "zdharma/fast-syntax-highlighting", defer:2
+zplug "unixorn/fzf-zsh-plugin"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
@@ -51,7 +52,7 @@ bindkey '^N' down-history
 
 bindkey '^?' backward-delete-char
 
-bindkey '^r' history-incremental-search-backward
+#bindkey '^r' history-incremental-search-backward
 bindkey -M vicmd '/' history-incremental-search-backward
 bindkey -M vicmd 'j' history-beginning-search-forward
 bindkey -M vicmd 'k' history-beginning-search-backward
@@ -90,3 +91,9 @@ alias pacbrowse="pacman -Qq | \
 
 eval "$(starship init zsh)"
 
+if [ -d /mnt/c/Windows ]; then
+    if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+        eval `dbus-launch --sh-syntax`
+        echo "dbusaddress:$DBUS_SESSION_BUS_ADDRESS"
+    fi
+fi
