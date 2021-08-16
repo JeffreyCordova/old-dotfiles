@@ -163,6 +163,9 @@ set mouse=a
 " sudo write
 :command Suw :w !sudo tee %
 
+" clipboard
+set clipboard=unnamedplus
+
 "---[plugins]------------------------------------------------------------------
 for f in glob(CONFIGS . "/nvim/init.d/*.vim", 0, 1)
     execute 'source' f
