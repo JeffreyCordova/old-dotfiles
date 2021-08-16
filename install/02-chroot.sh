@@ -24,6 +24,7 @@ reflector \
     --verbose \
     --protocol https \
     --latest 100 \
+    --fastest 20 \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
 pacman -Syy
