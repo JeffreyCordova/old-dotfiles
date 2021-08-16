@@ -17,9 +17,9 @@ sidec="$((mainc + 8))"
 #---[history file]--------------------------------------------------------------
 #   --------------
 
-export HISTSIZE=1000
+export HISTSIZE=1000000000
 export HISTFILE="$HOME/.zsh_history"
-export SAVEHIST=1000
+export SAVEHIST=1000000000
 
 #   ---------------------
 #---[syntax highlighting]-------------------------------------------------------

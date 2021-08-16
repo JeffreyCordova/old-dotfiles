@@ -91,9 +91,9 @@ alias pacbrowse="pacman -Qq | \
 
 eval "$(starship init zsh)"
 
-if [ -d /mnt/c/Windows ]; then
-    if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-        eval `dbus-launch --sh-syntax`
-        echo "dbusaddress:$DBUS_SESSION_BUS_ADDRESS"
-    fi
-fi
+#/if [ -d /mnt/c/Windows ]; then
+#    if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#        eval `dbus-launch --sh-syntax`
+#        echo "dbusaddress:$DBUS_SESSION_BUS_ADDRESS"
+#    fi
+#fi
