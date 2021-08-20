@@ -8,3 +8,5 @@ julia/.julia/environments/*
 julia/.julia/logs/*
 julia/.julia/packages/*
 julia/.julia/registries/*
+
+win32yank/.local/share
