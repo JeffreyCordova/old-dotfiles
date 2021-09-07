@@ -13,7 +13,6 @@
 source /usr/share/zsh/scripts/zplug/init.zsh
 
 zplug "zdharma/fast-syntax-highlighting", defer:2
-zplug "unixorn/fzf-zsh-plugin"
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
