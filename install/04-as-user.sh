@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/yay.git
-cd yay && makepkg
-cd yay && rm -rf yay
+git clone https://aur.archlinux.org/paru-bin.git
+cd paru-bin && makepkg
+cd .. && rm -rf paru-bin
 
 rustup default stable
 

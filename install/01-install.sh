@@ -21,10 +21,6 @@ reflector \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
 
-curl -O https://blackarch.org/strap.sh
-chmod +x strap.sh
-./strap.sh
-
 pacstrap /mnt \
     base{,-devel} linux{,-headers,-firmware} \
     intel-ucode efibootmgr \

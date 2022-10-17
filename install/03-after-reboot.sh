@@ -1,8 +1,8 @@
 #!/bin/bash
 
 passwd
-useradd -m -G wheel -s /bin/bash cordojd1
-passwd cordojd1
+useradd -m -G wheel -s /bin/bash jeff
+passwd jeff
 
 #---[fix]---------------
 visudo

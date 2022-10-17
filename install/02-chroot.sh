@@ -1,17 +1,14 @@
 #!/bin/bash
 
 ln -sf /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
-hwclock --systohc --utc
+hwclock --systohc
 #---[fix]---------------
 vim /etc/locale.gen
 #-----------------------
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf
 
-echo WS-2UA8261L5D > /etc/hostname
-#---[fix]---------------
-vim /etc/hosts
-#-----------------------
+echo arch-vm > /etc/hostname
 
 systemctl enable NetworkManager.service
 
