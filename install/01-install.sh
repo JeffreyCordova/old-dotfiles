@@ -16,8 +16,8 @@ pacman -Sy --noconfirm reflector
 reflector \
     --verbose \
     --protocol https \
-    --latest 100 \
-    --fastest 20 \
+    --latest 50 \
+    --fastest 10 \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
 
@@ -25,7 +25,7 @@ pacstrap /mnt \
     base{,-devel} linux{,-headers,-firmware} \
     intel-ucode efibootmgr \
     pigz pbzip2 \
-    networkmanager \
+    networkmanager polkit \
     reflector \
     vi vim \
     git stow \

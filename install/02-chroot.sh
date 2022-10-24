@@ -20,8 +20,8 @@ vim /etc/makepkg.conf
 reflector \
     --verbose \
     --protocol https \
-    --latest 100 \
-    --fastest 20 \
+    --latest 50 \
+    --fastest 10 \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
 pacman -Syy
