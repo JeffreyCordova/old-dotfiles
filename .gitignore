@@ -11,5 +11,8 @@ julia/.julia/registries/*
 
 win32yank/.local/share
 alacritty/.config/alacritty/*.bak
-alacritty/.local/state
 alacritty/.local/share
+alacritty/.local/state
+alacritty-xinit/.config/alacritty/*.bak
+alacritty-xinit/.local/share
+alacritty-xinit/.local/state
