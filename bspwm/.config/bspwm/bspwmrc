@@ -2,8 +2,8 @@
 
 case "$(hostname)" in
     "arch-z2")
-        bspc monitor DP-2 -d 1
-	bspc monitor DP-3 -d 2
+        bspc monitor DP-0 -d 1
+	bspc monitor DP-2 -d 2
         ;;
     "arch-vm")
         bspc monitor Virtual1 -d 1
