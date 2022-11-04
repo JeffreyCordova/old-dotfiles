@@ -74,8 +74,8 @@ alias path='printf "${PATH//:/\\n}\n"'
 alias reflector="sudo reflector --verbose \
                                 --protocol https \
                                 --country 'United States' \
-                                --latest 100 \
-                                --fastest 20 \
+                                --latest 50 \
+                                --fastest 10 \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 
@@ -90,9 +90,3 @@ alias pacbrowse="pacman -Qq | \
 
 eval "$(starship init zsh)"
 
-#if [ -d /mnt/c/Windows ]; then
-#    if test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-#        eval `dbus-launch --sh-syntax`
-#        echo "dbusaddress:$DBUS_SESSION_BUS_ADDRESS"
-#    fi
-#fi
