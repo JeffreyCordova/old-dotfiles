@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rofi -no-lazy-grab -monitor -1 -show drun -theme themes/appsmenu.rasi
-

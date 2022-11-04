@@ -1,7 +1,0 @@
-rofi.terminal:          termite
-
-rofi.kb-remove-to-eol:
-rofi.kb-accept-entry:   Return
-
-rofi.kb-row-down:       Control+j
-rofi.kb-row-up:         Control+k

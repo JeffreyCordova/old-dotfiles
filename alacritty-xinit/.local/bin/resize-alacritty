@@ -1,2 +1,0 @@
-#!/bin/sh
-xdotool search --name "Alacritty" windowsize $(xrandr | grep "*" | awk '{print $1}' | sed 's/x/ /g')
