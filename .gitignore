@@ -7,4 +7,4 @@ alacritty/.config/alacritty/*.bak
 alacritty/.local/share
 alacritty/.local/state
 
-nvim/.config/nvim/plugin/packer_compiled.lua
+neovim/.config/nvim/plugin/packer_compiled.lua
