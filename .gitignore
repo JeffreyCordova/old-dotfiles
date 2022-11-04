@@ -1,18 +1,10 @@
-fonts/.local/share/fonts/.uuid
-
 julia/.julia/compiled
 julia/.julia/environments
 julia/.julia/logs
 julia/.julia/packages
-julia/.julia/registries
-
-win32yank/.local/share
 
 alacritty/.config/alacritty/*.bak
 alacritty/.local/share
 alacritty/.local/state
-alacritty-xinit/.config/alacritty/*.bak
-alacritty-xinit/.local/share
-alacritty-xinit/.local/state
 
-nvim-packer/.config/nvim/plugin/packer_compiled.lua
+nvim/.config/nvim/plugin/packer_compiled.lua
