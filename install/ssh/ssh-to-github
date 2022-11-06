@@ -1,2 +1,2 @@
 #!/bin/bash
-curl -u "$USER" --data '{"title":"$TITLE", "key":"$KEY"}' https://api.github.com/user/keys
+curl -u "JeffreyCordova" --data '{"title":"arch-vm", "key":"'"$KEY"'"}' https://api.github.com/user/keys

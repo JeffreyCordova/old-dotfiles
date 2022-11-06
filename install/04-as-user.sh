@@ -1,11 +1,11 @@
 #!/bin/bash
 
-git clone https://aur.archlinux.org/paru-bin.git
-cd paru-bin && makepkg
-cd .. && rm -rf paru-bin
-
 rustup default stable
 
+git clone https://aur.archlinux.org/paru.git
+cd paru && makepkg
+cd .. && rm -rf paru
+
 #---[fix]---------------
-yay -S $(cat deps/deps-cli)
+paru -S $(cat deps)
 #-----------------------

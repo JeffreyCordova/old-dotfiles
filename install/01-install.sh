@@ -28,7 +28,7 @@ pacstrap /mnt \
     networkmanager polkit \
     reflector \
     vi vim \
-    git stow \
+    git stow openssh \
     rustup
 
 genfstab -U -p /mnt >> /mnt/etc/fstab

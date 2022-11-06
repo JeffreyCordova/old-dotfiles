@@ -24,7 +24,10 @@ reflector \
     --fastest 10 \
     --sort rate \
     --save /etc/pacman.d/mirrorlist
-pacman -Syy
+
+curl -O https://blackarch.org/strap.sh
+chmod +x strap.sh
+./strap.sh
 
 bootctl --path=/boot install
 cp /usr/share/systemd/bootctl/loader.conf /boot/loader
