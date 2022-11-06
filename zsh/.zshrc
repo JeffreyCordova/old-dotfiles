@@ -73,7 +73,6 @@ alias path='printf "${PATH//:/\\n}\n"'
 
 alias reflector="sudo reflector --verbose \
                                 --protocol https \
-                                --country 'United States' \
                                 --latest 50 \
                                 --fastest 10 \
                                 --sort rate \

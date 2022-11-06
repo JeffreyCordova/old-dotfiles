@@ -30,11 +30,7 @@ chmod +x strap.sh
 ./strap.sh
 
 bootctl --path=/boot install
-cp /usr/share/systemd/bootctl/loader.conf /boot/loader
-cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries
-#---[fix]---------------
-vim /boot/loader/loader.conf
-vim /boot/loader/entries/arch.conf
-#-----------------------
+cp boot/loader.conf /boot/loader
+cp boot/arch.conf /boot/loader/entries
 
 exit
