@@ -1,66 +1,46 @@
 [core]
     editor = nvim
+    pager = delta
 [user]
     name = Jeffrey Cordova
     email = jeffcordova@protonmail.com
 
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
 [push]
     default = simple
 [merge]
-    tool = nvimdiff
-    ff = only
-[mergetool]
-    prompt = false
-[mergetool "nvimdiff"]
-    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED \
-               -c '$wincmd w' -c 'wincmd J'
+    conflictstyle = diff3
 [diff]
-    prompt = false
-    tool = nvimdiff
-[difftool "nvimdiff"]
-    cmd = nvim -d $LOCAL $REMOTE
+    colorMoved = default
 
 [color]
-    ui = auto
+    ui = true
 [color "diff"]
-    plain = normal
-    meta = bold
-    frag = cyan bold
+    meta = yellow
+    frag = magenta bold
+    commit = yellow bold
     old  = red bold
     new = green bold
-    commit = yellow bold
-    whitespace = black red
-[color "branch"]
-    current = green bold
-    local = normal
-    remote = red bold
-    plain = normal
-[color "status"]
-    header = normal
-    added = red bold
-    updated = green bold
-    changed = yellow bold
-    untracked = magenta bold
-    nobranch = red
-[color "grep"]
-    match = yellow bold
-[color "interactive"]
-    prompt = normal
-    header = black bold
-    help = magenta bold
-    error = red bold
+    whitespace = red reverse
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 
 [alias]
-    a = add
-    c = commit
     cm = commit -m
     s = status -s
     ls = log --graph --date=relative \
         --pretty=tformat:'%C(auto)%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an)%Creset %Cblue(%ad)%Creset'
-    dt = difftool
-    dtc = difftool --cached
-    fff = flow feature finish
-    ffs = flow feature start
+    d = diff
+    ac = !git add . && git commit -m
+    undo = reset --soft HEAD~1
+    sub = submodule update --init --recursive
 
 [url "https://github/"]
     insteadOf = "gh:"
@@ -71,3 +51,6 @@
     insteadOf = "aur:"
 [url "ssh+git:://aur4.archlinux.org/"]
     pushInsteadOf = "aur:"
+
+[init]
+    defaultBranch = main

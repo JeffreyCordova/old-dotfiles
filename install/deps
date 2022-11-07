@@ -5,6 +5,7 @@ bspwm
 devtools
 fd
 fzf
+git-delta
 gtk2
 gtk3
 gtkmm3
@@ -12,6 +13,8 @@ julia
 ls++
 lua
 luarocks
+man-db
+man-pages
 neovim
 nerd-fonts-complete
 nodejs

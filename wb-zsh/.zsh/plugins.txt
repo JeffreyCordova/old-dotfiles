@@ -1,9 +1,0 @@
-willghatch/zsh-saneopt
-
-zsh-users/zsh-autosuggestions branch:develop
-zsh-users/zsh-history-substring-search
-zdharma/fast-syntax-highlighting
-changyuheng/zsh-interactive-cd
-
-mafredri/zsh-async
-zsh-users/zsh-completions
