@@ -3,6 +3,8 @@ asp
 bat
 bspwm
 devtools
+fd
+fzf
 gtk2
 gtk3
 gtkmm3
@@ -10,17 +12,16 @@ julia
 ls++
 lua
 luarocks
-mate-polkit
 neovim
 nerd-fonts-complete
 nodejs
 noto-fonts-emoji
 npm
 open-vm-tools
-paru
 pbzip2
 pigz
 python-pynvim
+ripgrep
 sheldon
 starship
 sxhkd
@@ -32,5 +33,4 @@ xorg-server
 xorg-xinit
 xorg-xprop
 xorg-xsetroot
-zplug
 zsh
