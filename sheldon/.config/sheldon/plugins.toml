@@ -12,7 +12,18 @@
 
 [plugins]
 
-# For example:
-#
-# [plugins.base16]
-# github = "chriskempson/base16-shell"
+[plugins.fast-syntax-highlighting]
+github = 'zdharma-continuum/fast-syntax-highlighting'
+
+[plugins.autosuggestions]
+github = 'zsh-users/zsh-autosuggestions'
+
+[plugins.zsh-history-substring-search]
+github = 'zsh-users/zsh-history-substring-search'
+
+[plugins.completions]
+github = 'clarketm/zsh-completions'
+
+[plugins.interactive-cd]
+github = 'changyuheng/zsh-interactive-cd'
+

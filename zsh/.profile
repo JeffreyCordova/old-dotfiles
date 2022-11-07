@@ -14,25 +14,17 @@ export EDITOR="nvim"
 export PAGER="less"
 export GREP_COLORS="mt=0;34"
 
-#   -------------
-#---[colored man]---------------------------------------------------------------
-#   -------------
+#   -------------------
+#---[colored man pages]---------------------------------------------------------
+#   -------------------
 
-LESS_TERMCAP_mb=$(printf "\e[0;34m")    # start blink
-LESS_TERMCAP_md=$(printf "\e[0;34m")    # start bold
-LESS_TERMCAP_so=$(printf "\e[7;34m")    # start standout
-LESS_TERMCAP_us=$(printf "\e[1;4;34m")  # start underline
-LESS_TERMCAP_me=$(printf "\e[0m")       # stop blink, bold
-LESS_TERMCAP_se=$(printf "\e[0m")       # stop standout
-LESS_TERMCAP_ue=$(printf "\e[0m")       # stop underline
-
-export LESS_TERMCAP_mb
-export LESS_TERMCAP_md
-export LESS_TERMCAP_so
-export LESS_TERMCAP_us
-export LESS_TERMCAP_me
-export LESS_TERMCAP_se
-export LESS_TERMCAP_ue
+export LESS_TERMCAP_mb=$(printf "\e[01;32m")     # start blink
+export LESS_TERMCAP_md=$(printf "\e[01;32m")     # start bold
+export LESS_TERMCAP_me=$(printf "\e[0m")         # stop blink, bold
+export LESS_TERMCAP_se=$(printf "\e[0m")         # stop standout
+export LESS_TERMCAP_so=$(printf "\e[01;47;34m")  # start standout
+export LESS_TERMCAP_ue=$(printf "\e[0m")         # stop underline
+export LESS_TERMCAP_us=$(printf "\e[01;36m")     # start underline
 
 #   ------
 #---[PATH]----------------------------------------------------------------------

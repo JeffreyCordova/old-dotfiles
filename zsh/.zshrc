@@ -10,55 +10,89 @@
 #---[plugins]-------------------------------------------------------------------
 #   ---------
 
-source /usr/share/zsh/scripts/zplug/init.zsh
+eval "$(sheldon source)"
 
-zplug "zdharma/fast-syntax-highlighting", defer:2
+#   -----------------
+#---[general options]-----------------------------------------------------------
+#   -----------------
 
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+setopt correct
+setopt extendedglob
+setopt nocaseglob
+setopt rcexpandparam
+setopt nocheckjobs
+setopt numericglobsort
+setopt longlistjobs
+setopt nonomatch
+setopt notify
 
-zplug load
-
-#   -----------------------
-#---[no history duplicates]-----------------------------------------------------
-#   -----------------------
-
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
-setopt EXTENDED_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt HIST_IGNORE_SPACE
-
-#   -----------------------------
-#---[case-insensitive completion]-----------------------------------------------
-#   -----------------------------
-
-zstyle ':completion:*' menu select=2
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+export EDITOR=nvim
 
 #   ---------
-#---[hotkeys]-------------------------------------------------------------------
+#---[history]-------------------------------------------------------------------
+#   ---------
+
+export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
+setopt incappendhistory
+setopt share_history
+setopt extended_history
+setopt histignorealldups
+setopt histignorespace
+
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+#   ------------
+#---[completion]----------------------------------------------------------------
+#   ------------
+
+zstyle ':completion:*' completer _complete
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' rehash true
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+WORDCHARS=${WORDCHARS//\/[&.;]}
+fpath=(~/.zfunc ~/.zsh/completions $fpath)
+
+autoload -Uz compinit
+for dump in ~/.zcompdump(#qN.mh+24); do
+    compinit
+done
+
+compinit -C
+
+#   ---------
+#---[vi mode]-------------------------------------------------------------------
 #   ---------
 
 bindkey -v
 
-bindkey '^P' up-history
-bindkey '^N' down-history
-
-bindkey '^?' backward-delete-char
-
-#bindkey '^r' history-incremental-search-backward
-bindkey -M vicmd '/' history-incremental-search-backward
-bindkey -M vicmd 'j' history-beginning-search-forward
-bindkey -M vicmd 'k' history-beginning-search-backward
-
-bindkey -M vicmd 'K' run-help
-
 export KEYTIMEOUT=1
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+#   -----
+#---[fzf]-----------------------------------------------------------------------
+#   -----
+
+export FZF_DEFAULT_COMMAND='rg --files --hidden --smart-case --glob "!.git/*"'
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 #   ---------
 #---[aliases]-------------------------------------------------------------------
