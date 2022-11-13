@@ -4,7 +4,5 @@ julia/.julia/logs
 julia/.julia/packages
 
 alacritty/.config/alacritty/*.bak
-alacritty/.local/share
-alacritty/.local/state
 
 neovim/.config/nvim/plugin/packer_compiled.lua
