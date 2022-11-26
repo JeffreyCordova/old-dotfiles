@@ -112,7 +112,7 @@ alias reflector="sudo reflector --verbose \
                                 --sort rate \
                                 --save /etc/pacman.d/mirrorlist"
 
-alias pacbrowse="pacman -Qq | \
+alias pacbrowse="paru -Qqe | \
                      fzf --preview 'pacman -Qil {}' \
                          --layout=reverse \
                          --bind 'enter:execute(pacman -Qil {} | less)'"
