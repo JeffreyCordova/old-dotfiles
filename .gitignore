@@ -6,3 +6,10 @@ julia/.julia/packages
 alacritty/.config/alacritty/*.bak
 
 neovim/.config/nvim/plugin/packer_compiled.lua
+
+nvchad/.config/nvim/plugin
+nvchad/.config/nvim/custom
+nvchad/.config/nvim/spell
+nvchad/.config/nvim/ftplugin
+nvchad/.config/nvim/coc-settings.json
+nvchad/.config/nvim/.luarc.json
