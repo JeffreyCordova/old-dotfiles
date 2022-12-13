@@ -98,8 +98,9 @@ source /usr/share/fzf/completion.zsh
 #---[aliases]-------------------------------------------------------------------
 #   ---------
 
-alias ls="ls++"
-alias l="ls -a"
+alias ls="exa"
+alias l="exa -lh"
+alias la="exa -lah"
 
 alias grep="grep --color=auto"
 

@@ -1,12 +1,14 @@
+adw-gtk3
 adwaita-qt5
 adwaita-qt6
 alacritty
 asp
-awesome-terminal-fonts
 bat
+bottom
 bspwm
 capitaine-cursors
 devtools
+exa
 exfatprogs
 fd
 figlet
@@ -18,7 +20,6 @@ gtk3
 gtkmm3
 gvfs
 inetutils
-ls++
 lua
 lxappearance-gtk3
 neovim
@@ -27,14 +28,14 @@ nodejs
 noto-fonts-emoji
 npm
 ntfs-3g
-nvidia
+nvidia-dkms
 nvidia-settings
 nvidia-utils
-otf-font-awesome
 paper-icon-theme-git
 papirus-folders-git
+papirus-icon-theme-git
 pcmanfm-gtk3
-plymouth-zfs
+picom
 polybar
 python-fonttools
 python-pynvim
@@ -59,4 +60,5 @@ xorg-xev
 xorg-xinit
 xorg-xprop
 xorg-xsetroot
+xorg-xwininfo
 zsh
