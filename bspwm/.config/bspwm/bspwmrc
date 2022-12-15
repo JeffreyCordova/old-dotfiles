@@ -34,5 +34,7 @@ sxhkd &
 
 ~/.config/polybar/launch.sh &
 
-xsetroot -cursor_name left_ptr
+xsetroot -cursor_name left_ptr &
+
+picom -b &
 
