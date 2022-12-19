@@ -26,6 +26,7 @@ exfatprogs
 expressvpn
 fakeroot
 fd
+feh
 figlet
 file
 findutils
@@ -95,6 +96,7 @@ starship
 stow
 sudo
 sxhkd
+terminus-font
 texinfo
 tmux
 ttf-font-awesome
@@ -105,7 +107,6 @@ vi
 vim
 wget
 which
-wireshark-qt
 xclip
 xorg-xdpyinfo
 xorg-xev
