@@ -828,7 +828,7 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#181c24'
+    background: '#1f232b'
     foreground: '#abb2bf'
 
   # Normal colors
