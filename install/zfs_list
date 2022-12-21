@@ -1,0 +1,10 @@
+NAME                   USED  AVAIL     REFER  MOUNTPOINT
+zroot                 12.7G   445G      192K  none
+zroot/DATA            5.70G   445G      192K  none
+zroot/DATA/home       5.70G   445G     5.70G  /home
+zroot/DATA/home/root   636K   445G      636K  /root
+zroot/DATA/local       192K   445G      192K  /local
+zroot/DATA/var         652K   445G      192K  none
+zroot/DATA/var/log     460K   445G      460K  /var/log
+zroot/ROOT            7.03G   445G      192K  none
+zroot/ROOT/arch       7.03G   445G     6.94G  /
