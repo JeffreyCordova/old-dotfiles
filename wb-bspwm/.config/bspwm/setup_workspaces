@@ -1,15 +1,5 @@
 #! /bin/sh
-first="admin"
-second="work"
-third="web"
-fourth="notes"
-fifth="references"
-sixth="music"
-seventh="email"
-eighth="reading"
-ninth="comms"
-tenth="misc"
-##Then, create workspaces on all monitors
+
 I=1
 M=$(bspc query -M | wc -l)
 if [[ "$M" == 1 ]]; then
