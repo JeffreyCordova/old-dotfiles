@@ -39,5 +39,7 @@ xsetroot -cursor_name left_ptr &
 
 picom -b &
 
+pa-applet &
+
 nm-applet &
 

@@ -106,17 +106,22 @@ alias grep="grep --color=auto"
 
 alias path='printf "${PATH//:/\\n}\n"'
 
-alias reflector="sudo reflector --verbose \
-                                --protocol https \
-                                --latest 50 \
-                                --fastest 10 \
-                                --sort rate \
+alias reflector="sudo reflector --verbose                        \
+                                --protocol https                 \
+                                --latest 50                      \
+                                --fastest 10                     \
+                                --sort rate                      \
                                 --save /etc/pacman.d/mirrorlist"
 
-alias pacbrowse="paru -Qqe | \
-                     fzf --preview 'pacman -Qil {}' \
-                         --layout=reverse \
+alias pacbrowse="paru -Qqe |                                            \
+                     fzf --preview 'pacman -Qil {}'                     \
+                         --layout=reverse                               \
                          --bind 'enter:execute(pacman -Qil {} | less)'"
+
+alias paclist="comm -23 <(pacman -Qqe | sort)                      \
+                        <({ pacman -Qqg base-devel;                \
+                            expac -1 '\n' '%E' base; } | sort -u)"
+
 
 #   --------
 #---[prompt]--------------------------------------------------------------------
