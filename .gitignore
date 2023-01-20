@@ -5,6 +5,9 @@ julia/.julia/packages
 
 alacritty/.config/alacritty/*.bak
 
+kitty/.config/kitty/current-theme.conf
+kitty/.config/kitty/kitty.conf.bak
+
 neovim/.config/nvim/plugin/packer_compiled.lua
 
 nvchad/.config/nvim/plugin
@@ -14,4 +17,3 @@ nvchad/.config/nvim/ftplugin
 nvchad/.config/nvim/coc-settings.json
 nvchad/.config/nvim/.luarc.json
 
-fuckyou/git/chief_cum_bucket
