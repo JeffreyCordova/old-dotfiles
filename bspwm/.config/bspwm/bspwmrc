@@ -31,7 +31,7 @@ export WINIT_X11_SCALE_FACTOR=1
 
 sxhkd &
 
-/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+#/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
 
 ~/.config/polybar/launch.sh &
 
@@ -39,7 +39,7 @@ xsetroot -cursor_name left_ptr &
 
 picom -b &
 
-pa-applet &
+#pa-applet &
 
 nm-applet &
 
