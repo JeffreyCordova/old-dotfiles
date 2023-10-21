@@ -98,9 +98,9 @@ source /usr/share/fzf/completion.zsh
 #---[aliases]-------------------------------------------------------------------
 #   ---------
 
-alias ls="exa"
-alias l="exa -lh"
-alias la="exa -lah"
+alias ls="eza"
+alias l="eza -lh"
+alias la="eza -lah"
 
 alias grep="grep --color=auto"
 
@@ -129,3 +129,12 @@ alias paclist="comm -23 <(pacman -Qqe | sort)                      \
 
 eval "$(starship init zsh)"
 
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/jeff/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<

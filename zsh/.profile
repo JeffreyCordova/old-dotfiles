@@ -42,3 +42,18 @@ export PATH="${HOME}/julia/usr/bin:${PATH}"
 
 export PATH="${HOME}/.poetry/bin:${PATH}"
 
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/jeff/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/jeff/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
